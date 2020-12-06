@@ -1,2 +1,3 @@
-# electron_Call-Help
-my new callhelp app
+# eCall-Help
+Это старый добрый колл-хелп, который вы знаете.
+подробнее на http://dimas.cf/
