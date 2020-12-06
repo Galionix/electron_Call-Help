@@ -16,7 +16,7 @@
     </script>
   </head>
 
-  <body>
+  <body  >
     <div class="main ">
       
 <!--
@@ -111,7 +111,7 @@ transparentable
       <div id="settings" class="page">
         <div class="title">Статусы</div>
 
-        <textarea  class="title" name="statuses" id="statuses" cols="30" rows="10">some text</textarea>
+        <textarea   name="statuses" id="statuses" cols="30" rows="10">some text</textarea>
         <button  class="button btn-ok" onclick="my_restart()">Применить</button>
 
 <div class='setting_item'> <p>Прозрачность</p>
@@ -145,7 +145,15 @@ transparentable
           </label>
         </div>
       </div>
+      <div class='setting_item'> <p>Размер шрифта</p>  
+        
+        <div class="value hidden">0</div>
+      <input type="range" min="10" max="30" step="1" value="17">
+    
+    </div>
+      
 
+      
       </div>
       <div id="chat" >
 
@@ -215,6 +223,7 @@ transparentable
 
 
 <script src="js/script.js"></script>
+
 <script src="js/update_handler.js"></script>
 
 </html>

@@ -24,7 +24,7 @@ try {
     require("electron-reloader")(module);
   } catch (error) {
     console.log('Eror: ' + error.message);
-    mytoggle_wrap
+    
   }
 
   const store = new Store({

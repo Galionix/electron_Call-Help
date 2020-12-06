@@ -190,6 +190,11 @@ console.log(num.toString().length);
 }
 
 
+$('.clip__item').on("dragend", function(){
+  console.log('mouseUp');
+  let item =  document.getElementById('selectable');
+  item.textContent = prev_text;
+});
 $('.clip__item').on("mousedown", function(){
 
  let item =  document.getElementById('selectable');
@@ -209,7 +214,10 @@ $('.clip__item').on("mousedown", function(){
 
 
 $('.clip__item').on("mouseup", function(){
-  document.getElementById('selectable').textContent = prev_text;
+
+
+
+document.getElementById('selectable').textContent = prev_text;
 
 
 var currentdate = new Date();
@@ -323,5 +331,22 @@ $('#menu_minimize').on('click',function () {
   ipc.send('app_minimize');
 })
 $('#menu_close').on('click',function () {
+
   ipc.send('app_close');
 })
+
+var elem = document.querySelector('input[type="range"]');
+
+var rangeValue = function(){
+  var newValue = elem.value;
+  var target = document.querySelector('.value');
+  target.innerHTML = newValue;
+  document.body.style.fontSize=elem.value+"px";
+
+//   var all = document.getElementsByClassName('button');
+// for (var i = 0; i < all.length; i++) {
+//   all[i].style.style.fontSize=elem.value+"px";
+// }
+}
+rangeValue();
+elem.addEventListener("input", rangeValue);

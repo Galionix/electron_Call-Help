@@ -2,7 +2,7 @@
 @import "_face_checkbox";
 
 $out_transition : 3000ms;
-$nav_transition : 20000ms;
+$nav_transition : 3000ms;
 $unhover_transition : 300ms;
 $appear_transition : 50ms;
 
@@ -22,6 +22,38 @@ $dark_back : #212121;
 $dark_back_tr : #212121c5;
 
 // background-color: lightgreen;
+ 
+input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  width: 40%;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  // content: ('123');
+  -webkit-appearance: none;
+  background-color: #e74c3c;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}​
+  input[type="range"]::-webkit-slider-thumb:hover {
+    // background-color: white;
+    border: 2px solid #e74c3c;
+  }
+  input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.6);
+  }
+
+
+
 body {
   
   small{
@@ -38,14 +70,13 @@ body {
 
   
   .button{
-
     margin: 0.5rem;
     padding: 0.3rem;
     border: 0;
     cursor: pointer;
     border-radius: 5px;
     transition: ease-in-out 300ms;
- 
+    font-size: inherit;
   }
 
   .setting_item{
@@ -66,10 +97,11 @@ content: " \f08e";
   }
   textarea{
     resize: vertical; 
-    font-size: 1.3rem;
+    // font-size: 1.3rem;
     margin-bottom: 1rem;
     width: 100%;
     height: auto;
+    font-size: inherit;
   }
   .title{
     
@@ -108,6 +140,7 @@ content: " \f08e";
 
 
     >div.mynav {
+      
       &:hover{
         // color: red;
       }
@@ -401,6 +434,7 @@ left: calc(100% - 30px);
   }
 }
 
+
 @media (prefers-color-scheme: dark) {
   
  
@@ -458,20 +492,33 @@ left: calc(100% - 30px);
     }
   body{
     color: $dark_black;
-  }
+  
+
+
+&:hover .mynav{
+
+  
+    background-color: $dark_back;  
+    & *{
+      color: $dark_black;
+    }
+  
+}
   .mynav{
     color: darken( $dark_back_def, 10%) ;
     .nav__item{
       transition:  ease-in $out_transition; 
-}
-    // background-color: $dark_back_def; 
-    &:hover{
-      background-color: $dark_back;  
-      & *{
-        color: $dark_black;
-      }
-    }
+
+   } 
+   
+   
+    
+  
+
   }
+}
+
+
   .cliplist:not(:hover) {
     .menu-list-item-active {
       transition: ease-in $out_transition; 
@@ -511,6 +558,7 @@ left: calc(100% - 30px);
 
 }
 
+
 @media (prefers-color-scheme: light) {
 
   .btn-ok{
@@ -542,19 +590,30 @@ left: calc(100% - 30px);
       }
     }
     }
-  .mynav{
-    color: darken( $light_back_def, 10%) ;
-    .nav__item{
-      transition: ease-in $out_transition; 
-}
-    background-color: $light_back_def; 
-    &:hover{
+
+
+    body{
+      // color: $light_black;
+  &:hover .mynav{
       background-color: $light_back;  
       & *{
         color: $light_black;
       }
+    
+  }
+    .mynav{
+      color: darken( $light_back_def, 10%) ;
+      .nav__item{
+        transition:  ease-in $out_transition; 
+  
+     } 
+     
     }
   }
+
+
+
+
   .cliplist:hover {
     background-color: $light_back;
   }

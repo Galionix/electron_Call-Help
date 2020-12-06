@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,6 +53,7 @@ table {
 }
 
 .toggle {
+  padding-bottom: 3rem;
   position: absolute;
   width: 12.25em;
   -webkit-user-select: none;
@@ -385,6 +387,39 @@ table {
   }
 }
 
+input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  width: 40%;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #e74c3c;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+​
+input[type="range"]::-webkit-slider-thumb:hover {
+  border: 2px solid #e74c3c;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
@@ -410,6 +445,7 @@ body .button {
   border-radius: 5px;
   -webkit-transition: ease-in-out 300ms;
   transition: ease-in-out 300ms;
+  font-size: inherit;
 }
 
 body .setting_item {
@@ -441,10 +477,10 @@ body .open-in-browser::after {
 
 body textarea {
   resize: vertical;
-  font-size: 1.3rem;
   margin-bottom: 1rem;
   width: 100%;
   height: auto;
+  font-size: inherit;
 }
 
 body .title {
@@ -740,18 +776,18 @@ i.stack_inside {
   body {
     color: #ffffff;
   }
-  .mynav {
-    color: rgba(230, 230, 230, 0.275);
-  }
-  .mynav .nav__item {
-    -webkit-transition: ease-in 3000ms;
-    transition: ease-in 3000ms;
-  }
-  .mynav:hover {
+  body:hover .mynav {
     background-color: #212121;
   }
-  .mynav:hover * {
+  body:hover .mynav * {
     color: #ffffff;
+  }
+  body .mynav {
+    color: rgba(230, 230, 230, 0.275);
+  }
+  body .mynav .nav__item {
+    -webkit-transition: ease-in 3000ms;
+    transition: ease-in 3000ms;
   }
   .cliplist:not(:hover) .menu-list-item-active {
     -webkit-transition: ease-in 3000ms;
@@ -804,19 +840,18 @@ i.stack_inside {
   #notification_update #update_description::after {
     background-color: #ffffff;
   }
-  .mynav {
-    color: rgba(230, 230, 230, 0.275);
-    background-color: rgba(255, 255, 255, 0.275);
-  }
-  .mynav .nav__item {
-    -webkit-transition: ease-in 3000ms;
-    transition: ease-in 3000ms;
-  }
-  .mynav:hover {
+  body:hover .mynav {
     background-color: #ffffff;
   }
-  .mynav:hover * {
+  body:hover .mynav * {
     color: #212121;
+  }
+  body .mynav {
+    color: rgba(230, 230, 230, 0.275);
+  }
+  body .mynav .nav__item {
+    -webkit-transition: ease-in 3000ms;
+    transition: ease-in 3000ms;
   }
   .cliplist:hover {
     background-color: #ffffff;
@@ -845,8 +880,8 @@ i.stack_inside {
 }
 
 .mynav:not(:hover) {
-  -webkit-transition: ease-in 20000ms;
-  transition: ease-in 20000ms;
+  -webkit-transition: ease-in 3000ms;
+  transition: ease-in 3000ms;
 }
 
 .cliplist:not(:hover) {
