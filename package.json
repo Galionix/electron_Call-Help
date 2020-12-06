@@ -1,0 +1,36 @@
+{
+  "name": "electron_call-help",
+  "version": "1.0.22",
+  "description": "my new callhelp app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Galionix/electron_Call-Help.git"
+  },
+  "keywords": [
+    "template",
+    "boilerplate"
+  ],
+  "author": "dimas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Galionix/electron_Call-Help/issues"
+  },
+  "homepage": "https://github.com/Galionix/electron_Call-Help#readme",
+  "devDependencies": {
+    "electron": "^11.0.3",
+    "electron-builder": "^22.9.1",
+    "electron-reloader": "^1.1.0",
+    "jquery": "^3.5.1"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.5",
+    "jquery": "^3.5.1"
+  }
+}
