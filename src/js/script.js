@@ -154,6 +154,7 @@ $('#cliplist').show();
 $('#menu_chat').on("mouseup", function(){
     allhide();
     $('#chat').show();
+    ipc.send('go_chat');
 });
 $('#menu_bonus').on("mouseup", function(){
     allhide();
@@ -266,8 +267,10 @@ const shell = require('electron').shell;
 
 
 $('.open-in-browser').on("click", (event) => {
+
         event.preventDefault();
         shell.openExternal(event.target.href);
+        
 });
 
 
@@ -275,6 +278,8 @@ $("#statuses").on("keyup", function(e){
   var statuses = document.getElementById("statuses").value ;
   //localStorage["user"] = user ;
   localStorage.setItem("statuses", statuses) ;
+  statuses_texts = localStorage.getItem("statuses");
+  renewClips();
 });
 
 function applyTransparency() {
@@ -350,3 +355,35 @@ var rangeValue = function(){
 }
 rangeValue();
 elem.addEventListener("input", rangeValue);
+
+if(!localStorage.getItem("username")==undefined)
+$('#user_name').val(localStorage.getItem("username"))
+
+if($('#user_name').val()=='')
+{
+
+  
+  $.ajax({
+    url: 'https://randomuser.me/api/',
+    dataType: 'json',
+    success: function(data) {
+      $('#user_name').val('username')
+      
+      $('#user_name').val( 
+        JSON.stringify(Object.values(data.results[0].name)).split('","').join(' ').replace('["','').replace('"]','')  );
+    }
+  });
+}
+
+$("#user_name").on("keyup", function(e){
+  var statuses = document.getElementById("statuses").value ;
+  //localStorage["user"] = user ;
+  localStorage.setItem("statuses", statuses) ;
+});
+
+let open_part = localStorage.getItem('open_part');
+if(open_part!=null&&open_part!='')
+{
+  allhide();
+  $('#'+open_part).show();
+}

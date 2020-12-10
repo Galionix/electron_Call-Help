@@ -394,7 +394,6 @@ input[type="range"] {
   width: 40%;
   height: 5px;
   border-radius: 5px;
-  margin: 0 auto;
   outline: 0;
 }
 
@@ -459,10 +458,22 @@ body .setting_item {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 1rem;
 }
 
+body .setting_item p {
+  width: auto;
+}
+
 body .setting_item .toggle {
+  right: 1rem;
+}
+
+body .setting_item .setting_value {
+  width: 40%;
   right: 1rem;
 }
 
@@ -578,10 +589,6 @@ body div.main > div.mynav > ul.nav_list .nav__item:hover i {
 body div.main > div.mynav > ul.nav_list .nav__item:not(:hover) i {
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
-}
-
-body div.main > div.mynav > ul.nav_list > li#menu_chat {
-  display: none;
 }
 
 body div.main > div.mynav > ul.nav_list > li#menu_bonus {
@@ -809,6 +816,7 @@ i.stack_inside {
   .mynav:not(.transparentable), #cliplist:not(.transparentable) {
     background-color: #212121;
   }
+  #mynav,
   #settings,
   #chat,
   #bonus,
@@ -871,6 +879,7 @@ i.stack_inside {
   .mynav:not(.transparentable), #cliplist:not(.transparentable) {
     background-color: #ffffff;
   }
+  #mynav,
   #settings,
   #chat,
   #bonus,

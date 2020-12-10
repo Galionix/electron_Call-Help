@@ -1,6 +1,6 @@
 {
   "name": "electron_call-help",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "my new callhelp app",
   "main": "main.js",
   "scripts": {
