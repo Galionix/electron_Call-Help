@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300&display=swap');
+@import "reset";
+@import "messages_styling";
+$unhover_transition : 300ms;
+
+.container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    // height: 70vh;
+    // overflow: scroll;
+}
+.chat__body{
+    margin: 3rem 1rem 4rem 21vw;
+  
+    background-position: center;
+//  overflow: scroll;
+    width: 100%;
+}
+.roomlist{
+
+// position: absolute;
+// z-index: 1;
+display: block;
+height: 110%;
+background-color: #8d5bdf;
+left:  -1.2rem;
+top: 2.1rem;
+
+ padding-right: 0.5rem;
+-webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+-moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+position: fixed;
+width: 22vw;
+}
+.roomname{
+    height: 50%;
+    font-weight: 600;
+    font-size: large;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    /* padding-bottom: 0px; */
+    line-height: 20px;  
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.message_prev{
+    
+    height: 50%;
+    font-size: medium;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-block-start: 0;
+    margin-block-end: 0;
+
+}
+
+ul>li{
+    list-style-type: none;
+
+}
+a{
+    text-decoration: none;
+}
+.roomlistitem:hover>a{ 
+    -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+    -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+    box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+}
+
+@media (max-width: 450px)
+{
+    .roomlist {
+        .roomlistitem{
+            a{
+                background-color: transparent; 
+                .message_prev,
+                .roomname{
+                    display: none;
+
+                } 
+            }
+        }
+    }
+}
+
+
+.roomlistitem{
+  margin-top: 10px;  
+  margin-left: 45px;
+//   width: 100%;
+}
+ul>li>a{
+    color: rgb(155, 155, 155);
+    background-color: #fff;
+    display: block;
+    height: 50px;
+    position: relative; 
+    padding-left: 35px; 
+    border-radius: 5px; 
+    
+
+}
+.roomlist.collapsed a{
+    background-color: transparent;
+}
+
+
+
+.roomlist.collapsed p{
+    display: none;
+}
+.roomlist.collapsed .roomlistitem{
+   
+}
+.roomlist.collapsed{
+    width: 70px;
+}
+.roomlist__img{
+    position: absolute;
+    left: -24px;
+    border-radius: 50%;
+    width: 50px;
+    /* z-index: 3; */
+}
+
+body  {
+font-family: 'Commissioner', sans-serif;
+// overflow: scroll;
+// overflow: hidden;
+}
+
+
+.grad {
+
+    background-color: rgba(0, 0, 0, 0.308);
+    color: rgb(238, 238, 238);
+    /*border: 1px solid;*/
+
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+
+    color: #000;
+    font-size: 20px;
+    background: #f6f6f6;
+
+    background-size: 400% 400%;
+
+
+    background-color: #89d4cf;
+    background-image: linear-gradient(315deg, #89d4cf 0%, #8d5bdf 74%);
+    
+
+
+animation: gradient 50s ease infinite;
+border-radius: 10px;  
+
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.mynav{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    // background-color: red;
+    .nav_list{
+        -webkit-app-region: drag;
+        display: flex;
+        background-color: #fff;
+        padding: 0.2rem;
+        li>div{
+            display: none;
+            
+
+          }
+
+
+          li#menu_minimize {
+            margin-left: auto;
+  
+        
+          }
+
+          li#menu_close {
+            margin-right: 0;
+            padding-right: 0;
+            &:hover i {
+              color: red;
+            }
+          }
+          i {
+            justify-content: center;
+            -webkit-app-region: none;
+            font-size: 23px;
+          }
+
+          .nav__item {
+            -webkit-app-region: none;
+            // border: 1px gray solid;
+            // background-color: red;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            
+            width: 2.5rem;
+            // padding-top: 0.1rem;
+            // padding-bottom: 0.1rem;
+            
+            >div{
+              display: none;
+              
+            }
+            padding: 0.1rem;
+            
+  
+            i {
+              justify-content: center;
+              -webkit-app-region: none;
+              font-size: 23px;
+            }
+  
+            &:hover i {
+              
+              color: cornflowerblue;
+              cursor: pointer;
+            }
+            &:not(:hover) i {
+  
+              transition: ease $unhover_transition;
+            }
+  
+            
+              // color: cornflowerblue;
+              
+          //  &:hover i { }
+          }
+    }
+}
+
+.hide{
+    display: none;
+}
+
+.sending__section{
+    justify-content: space-between;
+    textarea{
+        font-family: inherit;
+        outline: none;
+    }
+    border-radius: 0px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    bottom: 0rem;
+    height: 3rem;
+    left: 0px;
+    width: 100%;
+    i{
+        padding: 1rem;
+    }
+    .fa-paperclip{
+        // margin-left: 70px;
+    }
+    #message_text {
+        resize: none;
+    height: 2rem;
+    width: 100%;
+font-size: inherit;
+}
+a
+{
+    color:white;
+
+    &:hover{
+        color:cornflowerblue;
+    }
+}
+}
+
+#scroll_to_bottom{
+
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+
+a{
+    background-color: white;
+
+border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+height: 3rem;
+    color: #8d5bdf;
+    &:hover{
+        color:cornflowerblue;
+        -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+        -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+        box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+    }
+}
+}

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/css/chat.css">
+    <!-- <link rel="stylesheet" href="styles/css/index.css"> -->
+    <link rel="stylesheet" href="styles/css/all.min.css">
+    <link rel="stylesheet" href="styles/css/fontawesome.min.css">
+    <script src="js/vendor/jquery-3.5.1.min.js"></script>
+    <script>
+      window.jQuery = window.$ = require('jquery');
+    </script>
+</head>
+<body  >
+
+    
+<div id='mynav' class="mynav">
+        <ul class="nav_list">
+          
+          <li id="menu_cliplist" class="nav__item stats">
+            <!-- <span class="fa-stack fa-2x">
+              <i class="fal fa-square fa-stack-2x"></i>
+            </span> -->
+            <i class="fal fa-phone"></i>
+
+            <div class="">Статусы</div>
+          </li>
+          <li id="menu_settings" class="nav__item settings">
+         
+            <i class="fal fa-cog"></i>
+
+            <div class="">Настройки</div>
+          </li>
+          <li id="menu_chat" class=" nav__item chat">
+            <!-- <i class="fal fa-phone"></i> -->
+            <!-- <span class="fa-stack fa-2x">
+              <i class="fal fa-square fa-stack-2x"></i>
+            </span> -->
+            <i class="fal fa-comment-alt-dots"></i>
+
+            <div class="">Чат</div>
+          </li>
+          <li id="menu_bonus" class=" nav__item bonus">
+            <!-- <span class="fa-stack fa-2x"> -->
+              <!-- <i class="fal fa-square fa-stack-2x "></i> -->
+              
+            <!-- </span> -->
+<i title="some hint!" class="fal fa-skull fa-spin"></i>
+            <div class="">Бонус</div>
+          </li>
+
+          <li id="menu_info" class=" nav__item info">
+            <i class="fal fa-info"></i>
+            <div class="">Инфо</div>
+          </li>
+
+          <li id="menu_minimize" class=" nav__item">
+            <i class="fal fa-window-minimize"></i>
+            <div class="">Свернуть</div>
+          </li>
+
+          <li id="menu_close" class=" nav__item">
+            <i class="fa fa-window-close"></i>
+            <div class="">Закрыть</div>
+          </li>
+
+
+
+        </ul>
+
+      </div>
+ 
+
+<div class="container grad "  >
+
+
+
+    <div class="roomlist " >
+        <ul>
+            <li class="roomlistitem">
+                
+            <a href="">
+                <img class="roomlist__img" src="./content/100.png" alt="">
+                 
+                <p class="roomname">Lorem ipsum dolor sit amet.</p>
+                <p class="message_prev">Вася: Привет</p>
+             
+            </a>
+
+            </li>
+            <li class="roomlistitem"><a href=""><img class="roomlist__img" src="./content/100.png" alt="">
+                <p class="roomname">Lorem ipsum dolor sit amet.</p>
+                <p class="message_prev">Вася: Привет</p>
+            </a></li>
+            <li class="roomlistitem"><a href=""><img class="roomlist__img" src="./content/100.png" alt="">
+                <p class="roomname">Lorem ipsum dolor sit amet.</p>
+                <p class="message_prev">Вася: Привет</p>
+            </a></li>
+            <li class="roomlistitem"><a href=""><img class="roomlist__img" src="./content/100.png" alt="">
+                <p class="roomname">Lorem ipsum dolor sit amet.</p>
+                <p class="message_prev">Вася: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, natus!</p>
+            </a></li>
+            <li class="roomlistitem"><a href=""><img class="roomlist__img" src="./content/100.png" alt="">
+                <p class="roomname">Lorem ipsum dolor sit amet.</p>
+                <p class="message_prev">Вася: Привет</p>
+            </a></li>
+            <li class="roomlistitem"><a href=""><img class="roomlist__img" src="./content/100.png" alt="">                    
+                <p class="roomname">Lorem ipsum dolor sit amet.</p>
+                <p class="message_prev">Вася: Привет</p>
+            </a></li>
+        </ul>
+    </div>
+    
+    <div class="chat__body" id="chat__body" >
+
+
+        <div class="badge ">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+             <!-- <a class ="chat__message__img" href="http://" target="_blank" rel="noopener noreferrer"> 
+                <img  src="./content/back.jpg" alt="image"></a>  -->
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet. </div><!--  -->
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        <div class="badge ">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+             <a class ="chat__message__img" href="http://" target="_blank" rel="noopener noreferrer"> 
+                <img  src="./content/back.jpg" alt="image"></a> 
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet. </div><!--  -->
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        <div class="chat__message ">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+            
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. </div>
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+        
+        <div class="chat__message nosender">
+
+            <!-- <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div> -->
+            
+
+            
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. </div>
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        <div class="chat__message chat__reciever">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+             <a class ="chat__message__img" href="http://" target="_blank" rel="noopener noreferrer"> 
+                <img  src="./content/back.jpg" alt="image"></a> 
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet. </div>
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        
+
+        <div class="badge ">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+             <a class ="chat__message__img" href="http://" target="_blank" rel="noopener noreferrer"> 
+                <img  src="./content/back.jpg" alt="image"></a> 
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet. </div><!--  -->
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        <div class="chat__message ">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+            
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. </div>
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+        
+        <div class="chat__message nosender">
+
+            <!-- <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div> -->
+            
+
+            
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. </div>
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        <div class="chat__message chat__reciever">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+             <a class ="chat__message__img" href="http://" target="_blank" rel="noopener noreferrer"> 
+                <img  src="./content/back.jpg" alt="image"></a> 
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet. </div>
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        
+
+        <div class="badge ">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+             <!-- <a class ="chat__message__img" href="http://" target="_blank" rel="noopener noreferrer"> 
+                <img  src="./content/back.jpg" alt="image"></a>  -->
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet. </div><!--  -->
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        <div class="chat__message ">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+            
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. </div>
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+        
+        <div class="chat__message nosender">
+
+            <!-- <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div> -->
+            
+
+            
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. </div>
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        <div class="chat__message chat__reciever">
+
+            <div class="chat__name">
+                <a class="sender" href="prog">prog</a>
+                <a href="" class="role">админ</a></div>
+            
+
+             <!-- <a class ="chat__message__img" href="http://" target="_blank" rel="noopener noreferrer"> 
+                <img  src="./content/back.jpg" alt="image"></a>  -->
+
+
+                <div class="chat__message__text">
+                    Lorem ipsum dolor sit amet. </div>
+                     
+            
+                
+                <span class="chat__timestamp"
+                    title="20 Октябрь 2020 г. 23:45:54">23:45</span>
+            
+        </div>
+
+        
+
+
+    </div>
+
+
+    <script> 
+    window.scrollTo(0, document.scrollHeight); 
+    window.scrollTo(0, document.body.scrollHeight); </script>
+
+</div>
+
+<div id="scroll_to_bottom">
+    <a href="">
+        <i class="fad fa-angle-double-down"></i>
+    </a>
+</div>
+<div class="sending__section grad" >
+    <a href="">
+    <i class="fal fa-paperclip"></i></a>
+<textarea name="message_text" id="message_text" cols="30" rows="2" ></textarea>
+
+<!-- <input type="text" name="message_text" id="message_text"> -->
+<a href="" id="send_button"  >
+    <i class="fas fa-paper-plane"></i></a>
+<a href="" id="smile_button">
+    <i class="fas fa-smile"></i></a>
+
+</div>
+
+</body>
+<script >
+
+
+
+
+</script>
+
+<script>window.$ = window.jQuery = require('jquery');</script>  
+
+
+<script src="js/chat.js"></script>
+
+<!-- <script src="js/update_handler.js"></script> -->
+</html>
