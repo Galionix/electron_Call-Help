@@ -13,7 +13,15 @@
       window.jQuery = window.$ = require('jquery');
     </script>
 </head>
-<body  >
+<body 
+
+    ondragenter="dragEnter(event)" 
+    ondragleave="dragLeave(event)" 
+    ondrop="drop(event)" 
+    ondragover="allowDrop(event)" 
+    ondragend ="endDrop(event)" 
+
+>
 
     
 <div id='mynav' class="mynav">
@@ -71,8 +79,10 @@
         </ul>
 
       </div>
- 
 
+      <!-- <div id="drag_layer">
+        <div id="drag_hint">Перетащите сюда</div>
+    </div> -->
 <div class="container grad "  >
 
 
@@ -113,7 +123,9 @@
         </ul>
     </div>
     
-    <div class="chat__body" id="chat__body" >
+    <div class="chat__body" id="chat__body"  
+    
+    >
 
 
         <div class="badge ">
@@ -404,7 +416,7 @@
         <i class="fad fa-angle-double-down"></i>
     </a>
 </div>
-<div class="sending__section grad" >
+<div class="sending__section grad droptarget" >
     <a href="">
     <i class="fal fa-paperclip"></i></a>
 <textarea name="message_text" id="message_text" cols="30" rows="2" ></textarea>

@@ -387,3 +387,7 @@ if(open_part!=null&&open_part!='')
   allhide();
   $('#'+open_part).show();
 }
+
+function check_update_notification(updating) {
+  console.log('check_update_notification called, updating: ' + updating)
+}

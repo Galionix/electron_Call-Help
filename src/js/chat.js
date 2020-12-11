@@ -74,7 +74,9 @@ function textareaHeight() {
         ipc.send('app_close');
       })
 
-     
+     function check_update_notification() {
+       console.log('update checked!')
+     }
       function Send() {
 
 
@@ -121,6 +123,8 @@ var addZero = function (num){
   
     return  (num.toString().length > 1 )? num: '0'+num.toString() ;
      
+
+
   }
 
 
@@ -185,3 +189,47 @@ require('electron').ipcRenderer.on('window_resize', function(event, message) {
   window.scrollTo(0, document.body.scrollHeight); 
 });
 
+
+function dragEnter(event) {
+  $('#drag_layer').show();
+  // $('#drag_layer').css('opacity',1);
+
+  console.log('dragEnter fired');
+  
+}
+
+function dragLeave(event) {
+
+
+  
+  console.log('dragEnter fired');
+  // $('#drag_layer').css('opacity',0);
+  // event.preventDefault();
+  // event.stopPropagation();
+}
+
+function allowDrop(event) {
+  console.log('allowDrop fired');
+  $('#drag_layer').show();
+  // $('#drag_layer').css('opacity',1);
+  // event.preventDefault();
+  // event.stopPropagation();
+}
+
+
+function endDrop(event) {
+  console.log('endDrop fired');
+  // $('#drag_layer').css('opacity','1');
+  // event.preventDefault();
+  // event.stopPropagation();
+  
+}
+
+function drop(event) {
+  console.log('drop fired');
+
+  // $('#drag_layer').hide();
+  event.preventDefault();
+  // var data = event.dataTransfer.getData("Text");
+  // event.target.appendChild(document.getElementById(data));
+}

@@ -73,6 +73,18 @@ a{
 
 @media (max-width: 450px)
 {
+
+    .roomlistitem:hover>a{ 
+ 
+        box-shadow: none;
+    }
+
+    .roomlistitem:hover img{
+        // border-radius: 50%;
+        box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+
+    }
+
     .roomlist {
         .roomlistitem{
             a{
@@ -317,4 +329,30 @@ height: 3rem;
         box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
     }
 }
+}
+
+#drag_layer{
+    
+    position: fixed;
+    background-color: #212121b2;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    left: 0;
+    z-index: 120;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // opacity: 0;
+    transition: ease-in-out 300ms;
+    #drag_hint{
+        width: 70vw;
+        height: 30vh;
+        font-size: 5vw;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px dashed white;
+    }
 }

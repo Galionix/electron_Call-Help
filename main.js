@@ -1,4 +1,6 @@
-const devtools = 0;
+const devtools = 1;
+// const startpage = "index";
+const startpage = "chat";
 
 const { app, BrowserWindow, ipcMain } = require("electron");
 
@@ -46,7 +48,7 @@ function createWindow() {
   });
   mainWindow.setAlwaysOnTop(true, "normal");
 
-  mainWindow.loadFile("src/index.html");
+  mainWindow.loadFile("src/"+startpage+".html");
 
   mainWindow.on("resize", () => {
 
@@ -66,8 +68,12 @@ function createWindow() {
   if (devtools == 1) mainWindow.webContents.openDevTools({ mode: "undocked" });
 
   mainWindow.once("ready-to-show", () => {
+
     setInterval(() => {
-      if (!updating) autoUpdater.checkForUpdatesAndNotify();
+       
+      mainWindow.webContents.send("check_update_notification",updating);
+      if (!updating) {
+        autoUpdater.checkForUpdatesAndNotify();}
     }, 20000);
   });
 }
