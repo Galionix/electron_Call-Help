@@ -189,47 +189,56 @@ require('electron').ipcRenderer.on('window_resize', function(event, message) {
   window.scrollTo(0, document.body.scrollHeight); 
 });
 
+var lastLog ='';
 
-function dragEnter(event) {
-  $('#drag_layer').show();
-  // $('#drag_layer').css('opacity',1);
+function filterLog(param) {
+  if(lastLog != param) console.log(param)
+  lastLog=param
+}
+let droptarget = document.getElementById('drag_layer')
+let dropArea = document.getElementById('droptarget')
 
-  console.log('dragEnter fired');
+
+;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+  dropArea.addEventListener(eventName, preventDefaults, false)
+})
+
+;['dragenter', 'dragover'].forEach(eventName => {
+  dropArea.addEventListener(eventName, highlight, false)
+})
+;['dragleave', 'drop'].forEach(eventName => {
+  dropArea.addEventListener(eventName, unhighlight, false)
+})
+
+
+function preventDefaults (e) {
+
+  e.preventDefault()
+  e.stopPropagation()
+}
+
+
+function highlight(e) {
+  $(droptarget).show();
+  
+  // dropArea.classList.add('highlight')
+}
+function unhighlight(e) {
+  $(droptarget).hide();
+  // dropArea.classList.remove('highlight')
+}
+
+function handleFiles(files) {
+  ([...files]).forEach((uploadFile)=>{
+    console.log(uploadFile)
+  })
   
 }
-
-function dragLeave(event) {
-
-
-  
-  console.log('dragEnter fired');
-  // $('#drag_layer').css('opacity',0);
-  // event.preventDefault();
-  // event.stopPropagation();
+dropArea.addEventListener('drop', handleDrop, false)
+function handleDrop(e) {
+  let dt = e.dataTransfer
+  let files = dt.files
+  handleFiles(files)
 }
 
-function allowDrop(event) {
-  console.log('allowDrop fired');
-  $('#drag_layer').show();
-  // $('#drag_layer').css('opacity',1);
-  // event.preventDefault();
-  // event.stopPropagation();
-}
-
-
-function endDrop(event) {
-  console.log('endDrop fired');
-  // $('#drag_layer').css('opacity','1');
-  // event.preventDefault();
-  // event.stopPropagation();
-  
-}
-
-function drop(event) {
-  console.log('drop fired');
-
-  // $('#drag_layer').hide();
-  event.preventDefault();
-  // var data = event.dataTransfer.getData("Text");
-  // event.target.appendChild(document.getElementById(data));
-}
+$(droptarget).hide();

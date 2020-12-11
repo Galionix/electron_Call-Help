@@ -15,12 +15,7 @@
 </head>
 <body 
 
-    ondragenter="dragEnter(event)" 
-    ondragleave="dragLeave(event)" 
-    ondrop="drop(event)" 
-    ondragover="allowDrop(event)" 
-    ondragend ="endDrop(event)" 
-
+    id="droptarget"
 >
 
     
@@ -80,9 +75,9 @@
 
       </div>
 
-      <!-- <div id="drag_layer">
+      <div id="drag_layer">
         <div id="drag_hint">Перетащите сюда</div>
-    </div> -->
+    </div>
 <div class="container grad "  >
 
 
@@ -416,7 +411,7 @@
         <i class="fad fa-angle-double-down"></i>
     </a>
 </div>
-<div class="sending__section grad droptarget" >
+<div class="sending__section grad "  >
     <a href="">
     <i class="fal fa-paperclip"></i></a>
 <textarea name="message_text" id="message_text" cols="30" rows="2" ></textarea>
