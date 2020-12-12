@@ -53,7 +53,9 @@ input[type="range"]::-webkit-slider-thumb {
     transform: scale(1.6);
   }
 
-
+#statuses{
+  font-family: inherit;
+}
 
 body {
   
@@ -90,6 +92,9 @@ body {
       width: auto;
     }
     .toggle{
+      margin-top: 3rem;
+      .check-label{
+      }
       right: 1rem;
     }
     .setting_value{
@@ -148,7 +153,9 @@ content: " \f08e";
 
 
     >div.mynav {
-      
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      // padding-top: 0.3rem;
       &:hover{
         // color: red;
       }
@@ -295,7 +302,7 @@ content: " \f08e";
       justify-content: space-between;
       .clip__item{
       // justify-content: center;
-
+        padding-left: 0.5rem;
         display: flex;
         align-items: center;
         height: 100%;

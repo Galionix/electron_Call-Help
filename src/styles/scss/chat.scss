@@ -3,37 +3,54 @@
 @import "messages_styling";
 $unhover_transition : 300ms;
 
+body::-webkit-scrollbar {
+    width: 1px;
+}
+
 .container{
+
     display: flex;
     flex-direction: row;
     position: relative;
-    // height: 70vh;
-    // overflow: scroll;
+    
 }
 .chat__body{
-    margin: 3rem 1rem 4rem 21vw;
-  
+
+    margin: 3rem .5rem 4rem calc(22vw + 0.5rem);
     background-position: center;
-//  overflow: scroll;
     width: 100%;
+
 }
 .roomlist{
 
+ul{
+    &::-webkit-scrollbar {
+        width: 0.01em;
+        background-color: transparent;
+        // outline: 1px solid slategrey;
+    }
+    display: block;
+    height: calc(100vh - 4rem);
+// margin-bottom: 1rem;
+    overflow-y: scroll;
+}
 // position: absolute;
 // z-index: 1;
-display: block;
-height: 110%;
+// display: block;
+height: 100vh;
 background-color: #8d5bdf;
-left:  -1.2rem;
-top: 2.1rem;
+// left:  -1.2rem;
+top: 2rem;
+    // overflow-y: scroll;
 
  padding-right: 0.5rem;
 -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
 -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
 box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
 position: fixed;
-width: 22vw;
+width: calc(22vw - 0.5rem);
 }
+
 .roomname{
     height: 50%;
     font-weight: 600;
@@ -66,26 +83,41 @@ a{
     text-decoration: none;
 }
 .roomlistitem:hover>a{ 
-    -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
-    -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
-    box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+    // -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+    // -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
+    box-shadow: 25px 0px 20px -1px rgba(0,0,0,0.41);
 }
 
 @media (max-width: 450px)
 {
-
+    .roomlistitem
+    {
+        // margin-right: -50px;
+       img{
+           width: 45px;
+           margin-left: 3px;
+       }
+        display: flex;
+        justify-content: center;
+        .texts_container{
+            background-color: transparent;
+        }
+    }
     .roomlistitem:hover>a{ 
  
         box-shadow: none;
     }
 
     .roomlistitem:hover img{
+
         // border-radius: 50%;
+
         box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
 
     }
 
     .roomlist {
+        // overflow: scroll;
         .roomlistitem{
             a{
                 background-color: transparent; 
@@ -102,19 +134,37 @@ a{
 
 .roomlistitem{
   margin-top: 10px;  
-  margin-left: 45px;
+//   margin-left: 1.1rem;
+  margin-left: .5rem;
 //   width: 100%;
 }
+
+
+
 ul>li>a{
     color: rgb(155, 155, 155);
-    background-color: #fff;
+    // background-color: #fff;
     display: block;
-    height: 50px;
+    height: 52px;
+    display: flex;
+    align-items: center;
     position: relative; 
-    padding-left: 35px; 
-    border-radius: 5px; 
+    // margin-left: 2rem;
+    // padding-left: 35px; 
+    // border-radius: 5px; 
     
 
+}
+
+.texts_container{
+    position: absolute;
+    margin-left: 25px;
+    height: 50px;
+    z-index: -1;
+    padding-left: 2rem;
+background-color: #fff;
+width: 100%;
+// border-radius: 5px; 
 }
 .roomlist.collapsed a{
     background-color: transparent;
@@ -132,10 +182,11 @@ ul>li>a{
     width: 70px;
 }
 .roomlist__img{
-    position: absolute;
-    left: -24px;
+    // position: absolute;
+    // left: -24px;
     border-radius: 50%;
     width: 50px;
+    // margin-left: 1rem;
     /* z-index: 3; */
 }
 

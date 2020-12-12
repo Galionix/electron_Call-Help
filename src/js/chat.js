@@ -3,7 +3,7 @@ const socket = io.connect('http://192.168.77.22:3000/');
 let username = localStorage.getItem("username");
 const debug=1;
 // console.log('hi')
-
+window.scrollTo(0, document.body.scrollHeight);
 var viewing_bottom = true;
 
     //   $(".roomlist").on("mouseover" ,function () {
@@ -21,8 +21,8 @@ var viewing_bottom = true;
 function textareaHeight() {
   
   $(this).height(0);
-  $(this).height(this.scrollHeight+30);
-  $('.sending__section').height($(this).height()+30)
+  $(this).height(this.scrollHeight+9);
+  $('.sending__section').height($(this).height()+9)
   $('.chat__body').css('margin-bottom',$('.sending__section').height());
   if(viewing_bottom)
   window.scrollTo(0, document.body.scrollHeight);
@@ -204,7 +204,7 @@ $('#menu_info').on('click',function () {
   ipc.send('go_index');
 })
 
-require('electron').ipcRenderer.on('window_resize', function(event, message) {
+require('electron').ipcRenderer.on('window_resize', function() {
   // console.log('scrolling to buttom becouse winresize');
   
   if(viewing_bottom)
