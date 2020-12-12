@@ -189,56 +189,78 @@ require('electron').ipcRenderer.on('window_resize', function(event, message) {
   window.scrollTo(0, document.body.scrollHeight); 
 });
 
-var lastLog ='';
 
-function filterLog(param) {
-  if(lastLog != param) console.log(param)
-  lastLog=param
-}
-let droptarget = document.getElementById('drag_layer')
-let dropArea = document.getElementById('droptarget')
 
+
+
+let droplayer = document.getElementById('drag_layer')
+let droptarget = document.getElementById('droptarget')
+
+var counter = 0;
 
 ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, preventDefaults, false)
+  droptarget.addEventListener(eventName, preventDefaults, false)
 })
-
-;['dragenter', 'dragover'].forEach(eventName => {
-  dropArea.addEventListener(eventName, highlight, false)
-})
-;['dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, unhighlight, false)
-})
-
-
 function preventDefaults (e) {
-
   e.preventDefault()
   e.stopPropagation()
 }
 
-
-function highlight(e) {
-  $(droptarget).show();
-  
-  // dropArea.classList.add('highlight')
-}
-function unhighlight(e) {
-  $(droptarget).hide();
-  // dropArea.classList.remove('highlight')
-}
-
-function handleFiles(files) {
-  ([...files]).forEach((uploadFile)=>{
-    console.log(uploadFile)
-  })
-  
-}
-dropArea.addEventListener('drop', handleDrop, false)
+droptarget.addEventListener('drop', handleDrop, false)
 function handleDrop(e) {
+  $(droplayer).hide();
   let dt = e.dataTransfer
   let files = dt.files
-  handleFiles(files)
+  console.log(files);
+  
+
 }
 
-$(droptarget).hide();
+$(droptarget).bind({
+    dragenter: function(e) {
+      // e.preventDefault();  
+      // e.stopPropagation();
+        counter++;
+        // $(this).addClass('red');
+        $(droplayer).show();
+        console.log('dragenter' + counter);
+
+
+    },
+
+    dragleave: function(e) {
+      // e.preventDefault();  
+      // e.stopPropagation();
+        counter--;
+        console.log('dragleave ' + counter);
+        if (counter === 0) { 
+          {$(droplayer).hide();
+          console.log('dragleave ' + counter);
+          
+          }
+
+            // $(this).removeClass('red');
+        }
+    }
+    // ,
+    // drop: function (e) {    
+    //   console.log('drop');
+    //   e.preventDefault();  
+    //   e.stopPropagation();
+    //   $(droplayer).hide();
+    //   let dt = e.dataTransfer
+    //   // let files = 
+    //   ([...dt.files]).forEach((uploadFile)=>{
+    //     console.log(uploadFile)
+    //   })
+    // }
+
+
+});
+
+ 
+
+$(droplayer).hide();
+
+ 
+

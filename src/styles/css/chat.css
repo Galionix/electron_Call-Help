@@ -367,7 +367,7 @@ body {
 
 .mynav {
   position: fixed;
-  z-index: 10;
+  z-index: 121;
   width: 100%;
 }
 
