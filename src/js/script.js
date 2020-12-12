@@ -356,8 +356,11 @@ var rangeValue = function(){
 rangeValue();
 elem.addEventListener("input", rangeValue);
 
-if(!localStorage.getItem("username")==undefined)
-$('#user_name').val(localStorage.getItem("username"))
+if(localStorage.getItem("username")!=undefined)
+{$('#user_name').val(localStorage.getItem("username"))
+console.log('username loaded '+localStorage.getItem("username"));
+
+}
 
 if($('#user_name').val()=='')
 {
@@ -373,12 +376,13 @@ if($('#user_name').val()=='')
         JSON.stringify(Object.values(data.results[0].name)).split('","').join(' ').replace('["','').replace('"]','')  );
     }
   });
+  localStorage.setItem("username", $('#user_name').val()) ;
 }
 
 $("#user_name").on("keyup", function(e){
-  var statuses = document.getElementById("statuses").value ;
-  //localStorage["user"] = user ;
-  localStorage.setItem("statuses", statuses) ;
+
+  console.log('username set:' + $('#user_name').val())
+  localStorage.setItem("username", $('#user_name').val()) ;
 });
 
 let open_part = localStorage.getItem('open_part');

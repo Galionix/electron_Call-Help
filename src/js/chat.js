@@ -1,5 +1,7 @@
 const ipc = require('electron').ipcRenderer;
-
+const socket = io.connect('http://192.168.77.22:3000/');
+let username = localStorage.getItem("username");
+const debug=1;
 // console.log('hi')
 
 var viewing_bottom = true;
@@ -77,15 +79,22 @@ function textareaHeight() {
      function check_update_notification() {
        console.log('update checked!')
      }
-      function Send() {
+
+
+
+     function Send() {
 
 
         if(viewing_bottom)
         window.scrollTo(0, document.body.scrollHeight); 
         $('#message_text').focus();
 
-        
-addMessage(true,'Вы','admin','',$('#message_text').val())
+
+let Message = {name: username ,role:'admin',imgs: [''], text: $('#message_text').val()};
+
+socket.emit('chat message', Message);
+
+// addMessage(false,Message.name,Message.role,Message.imgs,Message.text)
 $('#message_text').val('')
 
       }
@@ -100,12 +109,22 @@ function incomingMessageTrigger() {
 
 } 
 
-$('#smile_button').on('click',function (e) {
-  e.preventDefault();
-  addMessage(false,'кто-то еще','оператор','',$('#message_text').val())
+
+socket.on('chat message', function(msg){
+
+
+  
+addMessage( msg)
 $('#message_text').val('')
 incomingMessageTrigger()
+
+  // $('#messages').append($('<li>').text(msg));
+  // window.scrollTo(0, document.body.scrollHeight);
+
+
 });
+
+
 
 $('#message_text').on('keydown',function (e) {
   // console.log(e.shiftKey)
@@ -128,30 +147,33 @@ var addZero = function (num){
   }
 
 
-function addMessage(is_receiver=true,name='Вы',role='',img='',text='') {
+function addMessage(msg) {
   var message = document.createElement('div');
   message.classList.add('chat__message');
-  (is_receiver) ? message.classList.add('chat__reciever') : false;
+  (msg.name == username) ? message.classList.add('chat__reciever') : false;
 
   var chat__name = document.createElement('div');
   chat__name.classList.add('chat__name');
   var a_sender = document.createElement('a');
   a_sender.classList.add('sender');
-  a_sender.href='/'+name;
-  a_sender.textContent=name;
+  a_sender.href='/'+msg.name;
+  a_sender.textContent=msg.name;
   chat__name.appendChild(a_sender)
 
   var a_role = document.createElement('a');
   a_role.classList.add('role');
   // a_role.href='/'+name;
-  a_role.textContent=role;
+  a_role.textContent=msg.role;
   chat__name.appendChild(a_role)
  message.appendChild(chat__name)
 
-  if(text!=''){
+  if(msg.text!=''){
     var chat__message__text = document.createElement('div');
     chat__message__text.classList.add('chat__message__text');
-    chat__message__text.textContent = text;
+    if(debug==1)
+    chat__message__text.textContent = JSON.stringify(msg).replace('","','",\r\n"');
+    else
+    chat__message__text.textContent = msg.text;
     message.appendChild(chat__message__text)
   }
   let currentdate = new Date();
@@ -263,4 +285,5 @@ $(droptarget).bind({
 $(droplayer).hide();
 
  
+
 
