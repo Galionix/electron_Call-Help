@@ -5,7 +5,7 @@ const debug=1;
 // console.log('hi')
 window.scrollTo(0, document.body.scrollHeight);
 var viewing_bottom = true;
-
+var previous_sender='';
     //   $(".roomlist").on("mouseover" ,function () {
     //     $(this).removeClass("collapsed")
        
@@ -151,7 +151,7 @@ function addMessage(msg) {
   var message = document.createElement('div');
   message.classList.add('chat__message');
   (msg.name == username) ? message.classList.add('chat__reciever') : false;
-
+  (msg.name == username) ? msg.name='Вы' : false;
   var chat__name = document.createElement('div');
   chat__name.classList.add('chat__name');
   var a_sender = document.createElement('a');
@@ -164,8 +164,13 @@ function addMessage(msg) {
   a_role.classList.add('role');
   // a_role.href='/'+name;
   a_role.textContent=msg.role;
-  chat__name.appendChild(a_role)
- message.appendChild(chat__name)
+  if(previous_sender!=msg.name)
+  {
+
+    chat__name.appendChild(a_role)
+    message.appendChild(chat__name)
+    previous_sender=msg.name;
+  }
 
   if(msg.text!=''){
     var chat__message__text = document.createElement('div');
@@ -180,7 +185,7 @@ function addMessage(msg) {
   var chat__timestamp = document.createElement('span');
   chat__timestamp.classList.add('chat__timestamp');
 
-  chat__timestamp.title= "time expanded"
+  chat__timestamp.title= "Получено в: " + new Date();
   chat__timestamp.textContent = addZero(currentdate.getHours()) + ":" + addZero(currentdate.getMinutes());
   message.appendChild(chat__timestamp)
 

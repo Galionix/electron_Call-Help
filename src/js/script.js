@@ -395,3 +395,20 @@ if(open_part!=null&&open_part!='')
 function check_update_notification(updating) {
   console.log('check_update_notification called, updating: ' + updating)
 }
+
+$('#menu_cliplist').on('click',function () {
+  localStorage.setItem('open_part','cliplist')
+  // ipc.send('go_index');
+})
+$('#menu_settings').on('click',function () {
+  localStorage.setItem('open_part','settings')
+  // ipc.send('go_index');
+})
+$('#menu_info').on('click',function () {
+  localStorage.setItem('open_part','info')
+  // ipc.send('go_index');
+})
+$('#menu_chat').on('click',function () {
+  localStorage.setItem('open_part','chat')
+  // ipc.send('go_index');
+})

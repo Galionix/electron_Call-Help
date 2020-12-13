@@ -547,7 +547,6 @@ body div.main > div.mynav {
 }
 
 body div.main > div.mynav > ul.nav_list {
-  padding: 0.2rem;
   -webkit-app-region: drag;
   padding: 0.1rem;
   list-style: none;
