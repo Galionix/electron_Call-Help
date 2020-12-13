@@ -10,7 +10,8 @@ const mongoose = require('mongoose');
  
 var url = "mongodb://127.0.0.1:27017/";
 
- 
+console.log('mongodb url: ' + url);
+
 async function start() {
   try {
 await mongoose.connect(config.get('mongoUri'),{
@@ -32,8 +33,8 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
 
   socket.on('register', function(msg){
-    io.emit('chat message', msg);
-    console.log('chat message', msg);
+     
+    console.log('registering user', msg);
     
   });
 
