@@ -1,21 +1,78 @@
 const ipc = require('electron').ipcRenderer;
-const socket = io.connect('http://192.168.77.22:3000/');
-let username = localStorage.getItem("username");
+const {machineId, machineIdSync} = require('node-machine-id');
+
+// TODO uncomment all socket 
+// const socket = io.connect('http://192.168.77.22:3000/');
+
+
+let username = localStorage.getItem("username")||"Имя не установлено";
+let userrole = localStorage.getItem("userrole")||"Роль не установлена"; 
+let current_chat = localStorage.getItem("current_chat")||"Последний чат"; 
+
+
+let droplayer = document.getElementById('drag_layer')
+let droptarget = document.getElementById('droptarget')
+$(droplayer).hide();
+
+$("#user_name").text(username);
+$("#user_role").text(userrole);
+$("#chat__name").text(current_chat);
+$("#chat__name2").text(current_chat);
+$("#menu").hide()
+$("#chat_settings").hide()
+
+function showBlack(e) {
+  if(e) e.preventDefault()
+  $(droplayer).show();
+  $("#drag_hint").hide()
+}
+function hideBlack(e) {
+  if(e) e.preventDefault()
+  $(droplayer).hide();
+  $("#drag_hint").show()
+}
+function open_menu(e) {
+ if(e) e.preventDefault()
+  $("#menu").show()
+  $(droplayer).show();
+  $("#drag_hint").hide()
+}
+
+$("#chat__name").on('click',function (e) {
+  showBlack(e)
+  $("#chat_settings").show()
+})
+
+$("#options_burger").on('click',function (e) {
+ 
+  open_menu(e)
+
+})
+$("#close_chat_settings").on('click',function (e) {
+  hideBlack(e)
+  $("#chat_settings").hide()
+})
+
+
+$("#drag_layer").on('click',function (e) {
+  $("#menu").hide()
+  $(droplayer).hide();
+  $("#drag_hint").show()
+})
 const debug=1;
 // console.log('hi')
 window.scrollTo(0, document.body.scrollHeight);
 var viewing_bottom = true;
 var previous_sender='';
-    //   $(".roomlist").on("mouseover" ,function () {
-    //     $(this).removeClass("collapsed")
-       
-    //   });
 
+var User = {
+uid:  machineIdSync(),
+name: username,
+role: 'admin',
+level: 2,
+}
+// socket.emit('register user',User);
 
-    // $(".roomlist").on("mouseout" ,function () {
-    //     $(this).addClass("collapsed")
-        
-    //   });
 
 
 function textareaHeight() {
@@ -92,7 +149,7 @@ function textareaHeight() {
 
 let Message = {name: username ,role:'admin',imgs: [''], text: $('#message_text').val()};
 
-socket.emit('chat message', Message);
+// socket.emit('chat message', Message);
 
 // addMessage(false,Message.name,Message.role,Message.imgs,Message.text)
 $('#message_text').val('')
@@ -110,19 +167,15 @@ function incomingMessageTrigger() {
 } 
 
 
-socket.on('chat message', function(msg){
+// socket.on('chat message', function(msg){
 
 
   
-addMessage( msg)
-$('#message_text').val('')
-incomingMessageTrigger()
-
-  // $('#messages').append($('<li>').text(msg));
-  // window.scrollTo(0, document.body.scrollHeight);
-
-
-});
+// addMessage( msg)
+// $('#message_text').val('')
+// incomingMessageTrigger()
+ 
+// });
 
 
 
@@ -220,8 +273,7 @@ require('electron').ipcRenderer.on('window_resize', function() {
 
 
 
-let droplayer = document.getElementById('drag_layer')
-let droptarget = document.getElementById('droptarget')
+
 
 var counter = 0;
 
@@ -287,7 +339,7 @@ $(droptarget).bind({
 
  
 
-$(droplayer).hide();
+
 
  
 

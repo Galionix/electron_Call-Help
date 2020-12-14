@@ -1,6 +1,6 @@
-const {Schema,model, Types} = require('mongoose')
+const {Schema, model, Types} = require('mongoose')
 
-const schema = new Schema({
+const schema = new  Schema({
     uid: {type: String,required:true,unique:true},
     name: {type: String,required:true},
     role: {type: String,required:true},
@@ -10,10 +10,10 @@ const schema = new Schema({
     group_chats: [{type: Types.ObjectId, ref: 'Chat'}],
     private_chats: [{type: Types.ObjectId, ref: 'Chat'}],
     
-    // email: {type: String,required:true,unique:true},
-    // password: {type: String, required: true},
-    // links: [{type: Types.ObjectId, ref: 'Link'}]
 })
 
+// email: {type: String,required:true,unique:true},
+// password: {type: String, required: true},
+// links: [{type: Types.ObjectId, ref: 'Link'}]
 
 module.exports = model('User',schema)
