@@ -48,6 +48,18 @@ table {
   border-spacing: 0;
 }
 
+:-webkit-any-link {
+  color: initial;
+}
+
+:-moz-any-link {
+  color: initial;
+}
+
+:any-link {
+  color: initial;
+}
+
 .chat__name {
   padding: 5px;
   font-weight: 800;
@@ -210,6 +222,7 @@ body::-webkit-scrollbar {
       -ms-flex-direction: row;
           flex-direction: row;
   position: relative;
+  background-color: #6e9698;
 }
 
 .chat__body {
@@ -219,6 +232,7 @@ body::-webkit-scrollbar {
 }
 
 #menu {
+  background-color: #6e9698;
   position: absolute;
   top: 2.25rem;
   z-index: 120;
@@ -260,7 +274,7 @@ body::-webkit-scrollbar {
   padding-top: .5rem;
   padding-right: .5rem;
   padding-bottom: .6rem;
-  background-color: #89d4cf;
+  background-color: #587A7B;
 }
 
 #options a {
@@ -272,7 +286,7 @@ body::-webkit-scrollbar {
           justify-content: center;
   width: 100%;
   height: 100%;
-  color: #3b42c5bb;
+  color: #fff1eb;
 }
 
 #options #search input {
@@ -288,19 +302,17 @@ body::-webkit-scrollbar {
   position: absolute;
   left: calc(22vw - 2.2rem);
   top: .8rem;
-  color: #3b42c588;
+  color: #6e9698;
 }
 
 .roomlist {
   height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#89d4cf), color-stop(48%, #EACCF8), to(#6654F1));
-  background-image: linear-gradient(#89d4cf 0%, #EACCF8 48%, #6654F1 100%);
+  background-color: #587A7B;
   top: 5rem;
-  padding-right: 0.5rem;
   -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
   box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
   position: fixed;
-  width: calc(22vw - 0.5rem);
+  width: calc(22vw);
 }
 
 .roomlist ul {
@@ -318,13 +330,14 @@ body::-webkit-scrollbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
+  height: 70vh;
   top: 15vh;
   left: 25vw;
   width: 50vw;
-  height: 70vh;
   z-index: 122;
   padding: 1rem;
+  position: fixed;
+  background-color: #6e9698;
 }
 
 #chat_settings .toprow {
@@ -346,7 +359,7 @@ body::-webkit-scrollbar {
 
 #chat_settings .toprow #chat__name2 {
   color: whitesmoke;
-  font-weight: 800;
+  font-weight: 600;
   margin-right: auto;
 }
 
@@ -368,7 +381,7 @@ body::-webkit-scrollbar {
   left: 22vw;
   position: fixed;
   width: 78vw;
-  background-color: #89d4cf;
+  background-color: #587A7B;
   padding: 0.1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -390,6 +403,10 @@ body::-webkit-scrollbar {
   padding-right: 1rem;
 }
 
+#chat_info #chat_options a i {
+  color: #fff1eb;
+}
+
 #chat_info .left_info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -403,12 +420,12 @@ body::-webkit-scrollbar {
 #chat_info .left_info #chat__name,
 #chat_info .left_info #online_counter {
   font-size: 1rem;
-  color: #3b42c5bb;
+  color: #fff1eb;
 }
 
 #chat_info .left_info #chat__name {
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .roomname {
@@ -446,9 +463,12 @@ a {
   text-decoration: none;
 }
 
-.roomlistitem:hover > a {
-  -webkit-box-shadow: 25px 0px 20px -1px rgba(0, 0, 0, 0.41);
-          box-shadow: 25px 0px 20px -1px rgba(0, 0, 0, 0.41);
+.roomlistitem:hover .texts_container {
+  background-color: #5e8384;
+}
+
+.roomlistitem:hover .texts_container .roomname {
+  color: #fff1eb;
 }
 
 @media (max-width: 450px) {
@@ -479,13 +499,6 @@ a {
     width: 45px;
     margin-left: 3px;
   }
-  .roomlistitem .texts_container {
-    background-color: transparent;
-  }
-  .roomlistitem:hover > a {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
   .roomlistitem:hover img {
     -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
             box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
@@ -501,11 +514,11 @@ a {
 
 .roomlistitem {
   margin-top: 10px;
-  margin-left: .5rem;
+  padding-left: .5rem;
 }
 
 ul > li > a {
-  color: #9b9b9b;
+  color: #fff1eb;
   display: block;
   height: 52px;
   display: -webkit-box;
@@ -523,7 +536,6 @@ ul > li > a {
   height: 50px;
   z-index: -1;
   padding-left: 2rem;
-  background-color: #fff;
   width: calc(22vw - 4.5rem);
   border-radius: 5px;
 }
@@ -550,23 +562,6 @@ body {
   font-family: 'Commissioner', sans-serif;
 }
 
-.grad {
-  background-color: rgba(0, 0, 0, 0.308);
-  color: #eeeeee;
-  /*border: 1px solid;*/
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
-  color: #000;
-  font-size: 20px;
-  background: #f6f6f6;
-  background-size: 400% 400%;
-  background-color: #89d4cf;
-  background-image: linear-gradient(315deg, #89d4cf 0%, #8d5bdf 74%);
-  -webkit-animation: gradient 50s ease infinite;
-          animation: gradient 50s ease infinite;
-  border-radius: 10px;
-}
-
 @-webkit-keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -589,6 +584,19 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.grad {
+  color: #eeeeee;
+  /*border: 1px solid;*/
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  color: #000;
+  font-size: 20px;
+  background: #6e9698;
+  background-size: 100% 100%;
+  background-position: 0% 50%;
+  border-radius: 10px;
 }
 
 .mynav {
@@ -674,6 +682,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-color: #587A7B;
   border-radius: 0px;
   position: fixed;
   display: -webkit-box;
@@ -702,6 +711,8 @@ body {
   height: 2rem;
   width: 100%;
   font-size: inherit;
+  background-color: inherit;
+  border: 0;
 }
 
 .sending__section a {

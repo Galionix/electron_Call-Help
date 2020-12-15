@@ -48,6 +48,18 @@ table {
   border-spacing: 0;
 }
 
+:-webkit-any-link {
+  color: initial;
+}
+
+:-moz-any-link {
+  color: initial;
+}
+
+:any-link {
+  color: initial;
+}
+
 .toggle {
   font-size: 50%;
 }

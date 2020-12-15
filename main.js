@@ -1,6 +1,6 @@
-const devtools = 0;
+const devtools = 1;
 // const startpage = "index";
-const startpage = "index";
+const startpage = "chat";
 
 const { app, BrowserWindow, ipcMain } = require("electron");
 

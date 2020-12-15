@@ -2,8 +2,20 @@
 @import "reset";
 @import "messages_styling";
 $unhover_transition : 300ms;
-$topcolor: #89d4cf;
-$ontopcolor: #3b42c5bb;
+$topcolor: #b1f4cf ;
+
+// $back_primary: #ace0f9;
+// $back_secondary:  #fff1eb;
+$back_primary: #587A7B;
+$back_secondary:  lighten($back_primary, 10%);
+$font_heavy: 600;
+$font_color_primary: #fff1eb;
+$font_color_secondary: $back_secondary;
+$side_gradient: linear-gradient( #fff1eb 0%, #ace0f9 100%);
+// $side_gradient: linear-gradient(315deg, #9890e3 0%, #b1f4cf 100%);
+// background-image: 
+
+// $ontopcolor: white;
 // $topcolor: #93c3f0;
 
 body::-webkit-scrollbar {
@@ -15,7 +27,7 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: row;
     position: relative;
-
+    background-color: $back_secondary;
 }
 
 .chat__body {
@@ -27,6 +39,8 @@ body::-webkit-scrollbar {
 }
 
 #menu {
+  background-color: $font_color_secondary;
+
     // display: none;
     // padding: 0.5rem;
     position: absolute;
@@ -55,7 +69,6 @@ body::-webkit-scrollbar {
     height: calc(100vh - 2.2rem);
     border-radius: 0;
     box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
-
 }
 
 #options {
@@ -66,7 +79,7 @@ body::-webkit-scrollbar {
         width: 100%;
         height: 100%;
         // color: #8d5bdf;
-        color: $ontopcolor;
+        color: $font_color_primary;
     }
 
     display: flex;
@@ -82,7 +95,8 @@ body::-webkit-scrollbar {
     padding-bottom: .6rem;
 
 
-    background-color: $topcolor;
+    background-color: $back_primary;
+    
 
     //searchback
     // background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
@@ -103,7 +117,7 @@ body::-webkit-scrollbar {
             left: calc(22vw - 2.2rem);
             top: .8rem;
             // color: gray;
-            color: #3b42c588;
+            color: $font_color_secondary;
 
         }
     }
@@ -128,36 +142,34 @@ body::-webkit-scrollbar {
     // z-index: 1;
     // display: block;
     height: 100vh;
-    // background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
-    // background-image: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #3b41c5 100%);
-    // background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);
-    background-image: linear-gradient($topcolor 0%, #EACCF8 48%, #6654F1 100%);
+
+    // background-image: $side_gradient;
+    background-color: $back_primary;
     // background-color: #8d5bdf;
     //roomlistback
     // left:  -1.2rem;
     top: 5rem;
     // overflow-y: scroll;
 
-    padding-right: 0.5rem;
     -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
     -moz-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
     box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
     position: fixed;
-    width: calc(22vw - 0.5rem);
+    width: calc(22vw );
 }
 
 #chat_settings {
-    display: flex;
     // justify-content: center;
     // align-items: center;
-    position: fixed;
+    display: flex;
+    height: 70vh;
     top: 15vh;
     left: 25vw;
     width: 50vw;
-    height: 70vh;
     z-index: 122;
     padding: 1rem;
-  
+    position: fixed;
+  background-color: $font_color_secondary;
     .toprow {
         width: 100%;
         display: flex;
@@ -171,7 +183,7 @@ body::-webkit-scrollbar {
 
         #chat__name2 {
             color: whitesmoke;
-            font-weight: 800;
+            font-weight: $font_heavy;
             margin-right: auto;
         }
         .nav__item2{
@@ -197,7 +209,7 @@ color: white ;
     left: 22vw;
     position: fixed;
     width: 78vw;
-    background-color: $topcolor;
+    background-color: $back_primary;
 
     padding: 0.1rem;
     display: flex;
@@ -209,6 +221,9 @@ color: white ;
         width: 1rem;
         height: 1rem;
         padding-right: 1rem;
+        a i{
+            color: $font_color_primary;
+        }
     }
 
     .left_info {
@@ -221,19 +236,19 @@ color: white ;
         #online_counter {
 
             font-size: 1rem;
-            color: $ontopcolor;
+            color: $font_color_primary;
         }
 
         #chat__name {
             font-size: 1.2rem;
-            font-weight: 800;
+            font-weight: $font_heavy;
         }
     }
 }
 
 .roomname {
     height: 50%;
-    font-weight: 600;
+    font-weight: $font_heavy;
     font-size: large;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -265,10 +280,19 @@ a {
     text-decoration: none;
 }
 
-.roomlistitem:hover>a {
+.roomlistitem:hover {
     // -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
     // -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
-    box-shadow: 25px 0px 20px -1px rgba(0, 0, 0, 0.41);
+    // box-shadow: 25px 0px 20px -1px rgba(0, 0, 0, 0.41);
+    .texts_container{
+        background-color: lighten(  $back_primary,3% );
+        
+        .roomname{
+    color: $font_color_primary;
+
+    
+}
+    }
 }
 
 @media (max-width: 450px) {
@@ -304,14 +328,11 @@ a {
         justify-content: center;
 
         .texts_container {
-            background-color: transparent;
+            // background-color: transparent;
         }
     }
 
-    .roomlistitem:hover>a {
-
-        box-shadow: none;
-    }
+ 
 
     .roomlistitem:hover img {
 
@@ -343,14 +364,14 @@ a {
 .roomlistitem {
     margin-top: 10px;
     //   margin-left: 1.1rem;
-    margin-left: .5rem;
+    padding-left: .5rem;
     //   width: 100%;
 }
 
 
 
 ul>li>a {
-    color: rgb(155, 155, 155);
+    color: $font_color_primary;
     // background-color: #fff;
     display: block;
     height: 52px;
@@ -370,7 +391,7 @@ ul>li>a {
     height: 50px;
     z-index: -1;
     padding-left: 2rem;
-    background-color: #fff;
+    // background-color: #fff;
     width: calc(22vw - 4.5rem);
     border-radius: 5px;
 }
@@ -407,35 +428,6 @@ body {
 }
 
 
-.grad {
-
-    background-color: rgba(0, 0, 0, 0.308);
-    color: rgb(238, 238, 238);
-    /*border: 1px solid;*/
-
-    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-    transition: font-size 0.3s ease, background-color 0.3s ease;
-
-    color: #000;
-    font-size: 20px;
-    background: #f6f6f6;
-
-    background-size: 400% 400%;
-
-
-    background-color: #89d4cf;
-    background-image: linear-gradient(315deg, #89d4cf 0%, #8d5bdf 74%);
-
-
-
-    animation: gradient 50s ease infinite;
-    border-radius: 10px;
-
-}
-
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -449,6 +441,37 @@ body {
         background-position: 0% 50%;
     }
 }
+
+.grad {
+
+    // background-color: rgba(0, 0, 0, 0.308);
+    color: rgb(238, 238, 238);
+    /*border: 1px solid;*/
+
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+
+    color: #000;
+    font-size: 20px;
+    background: $back_secondary;
+
+    background-size: 100% 100%;
+
+
+    // background-color: #89d4cf;
+    // background-image: $side_gradient;
+    // background-image: linear-gradient(315deg, #89d4cf 0%, #8d5bdf 74%);
+    background-position: 0% 50%;
+
+
+    // animation: gradient 5s ease infinite;
+    border-radius: 10px;
+
+}
+
 
 .mynav {
     position: fixed;
@@ -527,10 +550,7 @@ body {
                 transition: ease $unhover_transition;
             }
 
-
-            // color: cornflowerblue;
-
-            //  &:hover i { }
+ 
         }
     }
 }
@@ -541,7 +561,7 @@ body {
 
 .sending__section {
     justify-content: space-between;
-
+    background-color: $back_primary;
     textarea {
         font-family: inherit;
         outline: none;
@@ -560,15 +580,16 @@ body {
         padding: 1rem;
     }
 
-    .fa-paperclip {
-        // margin-left: 70px;
-    }
+    
 
     #message_text {
         resize: none;
         height: 2rem;
         width: 100%;
         font-size: inherit;
+        background-color: inherit;
+        border: 0;
+        
     }
 
     a {
