@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,6 +53,7 @@ table {
 }
 
 .toggle {
+  padding-bottom: 3rem;
   position: absolute;
   width: 12.25em;
   -webkit-user-select: none;
@@ -385,6 +387,42 @@ table {
   }
 }
 
+input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  width: 40%;
+  height: 5px;
+  border-radius: 5px;
+  outline: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #e74c3c;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+​
+input[type="range"]::-webkit-slider-thumb:hover {
+  border: 2px solid #e74c3c;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+}
+
+#statuses {
+  font-family: inherit;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
@@ -410,6 +448,7 @@ body .button {
   border-radius: 5px;
   -webkit-transition: ease-in-out 300ms;
   transition: ease-in-out 300ms;
+  font-size: inherit;
 }
 
 body .setting_item {
@@ -423,10 +462,23 @@ body .setting_item {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 1rem;
 }
 
+body .setting_item p {
+  width: auto;
+}
+
 body .setting_item .toggle {
+  margin-top: 3rem;
+  right: 1rem;
+}
+
+body .setting_item .setting_value {
+  width: 40%;
   right: 1rem;
 }
 
@@ -441,10 +493,10 @@ body .open-in-browser::after {
 
 body textarea {
   resize: vertical;
-  font-size: 1.3rem;
   margin-bottom: 1rem;
   width: 100%;
   height: auto;
+  font-size: inherit;
 }
 
 body .title {
@@ -482,6 +534,8 @@ body div.main {
 }
 
 body div.main > div.mynav {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
   margin-bottom: 0;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -493,7 +547,6 @@ body div.main > div.mynav {
 }
 
 body div.main > div.mynav > ul.nav_list {
-  padding: 0.2rem;
   -webkit-app-region: drag;
   padding: 0.1rem;
   list-style: none;
@@ -542,10 +595,6 @@ body div.main > div.mynav > ul.nav_list .nav__item:hover i {
 body div.main > div.mynav > ul.nav_list .nav__item:not(:hover) i {
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
-}
-
-body div.main > div.mynav > ul.nav_list > li#menu_chat {
-  display: none;
 }
 
 body div.main > div.mynav > ul.nav_list > li#menu_bonus {
@@ -609,6 +658,7 @@ body div.main > div#cliplist {
 }
 
 body div.main > div#cliplist .clip__item {
+  padding-left: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -740,18 +790,18 @@ i.stack_inside {
   body {
     color: #ffffff;
   }
-  .mynav {
-    color: rgba(230, 230, 230, 0.275);
-  }
-  .mynav .nav__item {
-    -webkit-transition: ease-in 3000ms;
-    transition: ease-in 3000ms;
-  }
-  .mynav:hover {
+  body:hover .mynav {
     background-color: #212121;
   }
-  .mynav:hover * {
+  body:hover .mynav * {
     color: #ffffff;
+  }
+  body .mynav {
+    color: rgba(230, 230, 230, 0.275);
+  }
+  body .mynav .nav__item {
+    -webkit-transition: ease-in 3000ms;
+    transition: ease-in 3000ms;
   }
   .cliplist:not(:hover) .menu-list-item-active {
     -webkit-transition: ease-in 3000ms;
@@ -773,6 +823,7 @@ i.stack_inside {
   .mynav:not(.transparentable), #cliplist:not(.transparentable) {
     background-color: #212121;
   }
+  #mynav,
   #settings,
   #chat,
   #bonus,
@@ -804,19 +855,18 @@ i.stack_inside {
   #notification_update #update_description::after {
     background-color: #ffffff;
   }
-  .mynav {
-    color: rgba(230, 230, 230, 0.275);
-    background-color: rgba(255, 255, 255, 0.275);
-  }
-  .mynav .nav__item {
-    -webkit-transition: ease-in 3000ms;
-    transition: ease-in 3000ms;
-  }
-  .mynav:hover {
+  body:hover .mynav {
     background-color: #ffffff;
   }
-  .mynav:hover * {
+  body:hover .mynav * {
     color: #212121;
+  }
+  body .mynav {
+    color: rgba(230, 230, 230, 0.275);
+  }
+  body .mynav .nav__item {
+    -webkit-transition: ease-in 3000ms;
+    transition: ease-in 3000ms;
   }
   .cliplist:hover {
     background-color: #ffffff;
@@ -836,6 +886,7 @@ i.stack_inside {
   .mynav:not(.transparentable), #cliplist:not(.transparentable) {
     background-color: #ffffff;
   }
+  #mynav,
   #settings,
   #chat,
   #bonus,
@@ -845,8 +896,8 @@ i.stack_inside {
 }
 
 .mynav:not(:hover) {
-  -webkit-transition: ease-in 20000ms;
-  transition: ease-in 20000ms;
+  -webkit-transition: ease-in 3000ms;
+  transition: ease-in 3000ms;
 }
 
 .cliplist:not(:hover) {

@@ -154,6 +154,7 @@ $('#cliplist').show();
 $('#menu_chat').on("mouseup", function(){
     allhide();
     $('#chat').show();
+    ipc.send('go_chat');
 });
 $('#menu_bonus').on("mouseup", function(){
     allhide();
@@ -190,6 +191,11 @@ console.log(num.toString().length);
 }
 
 
+$('.clip__item').on("dragend", function(){
+  console.log('mouseUp');
+  let item =  document.getElementById('selectable');
+  item.textContent = prev_text;
+});
 $('.clip__item').on("mousedown", function(){
 
  let item =  document.getElementById('selectable');
@@ -209,7 +215,10 @@ $('.clip__item').on("mousedown", function(){
 
 
 $('.clip__item').on("mouseup", function(){
-  document.getElementById('selectable').textContent = prev_text;
+
+
+
+document.getElementById('selectable').textContent = prev_text;
 
 
 var currentdate = new Date();
@@ -258,8 +267,10 @@ const shell = require('electron').shell;
 
 
 $('.open-in-browser').on("click", (event) => {
+
         event.preventDefault();
         shell.openExternal(event.target.href);
+        
 });
 
 
@@ -267,6 +278,8 @@ $("#statuses").on("keyup", function(e){
   var statuses = document.getElementById("statuses").value ;
   //localStorage["user"] = user ;
   localStorage.setItem("statuses", statuses) ;
+  statuses_texts = localStorage.getItem("statuses");
+  renewClips();
 });
 
 function applyTransparency() {
@@ -323,5 +336,79 @@ $('#menu_minimize').on('click',function () {
   ipc.send('app_minimize');
 })
 $('#menu_close').on('click',function () {
+
   ipc.send('app_close');
+})
+
+var elem = document.querySelector('input[type="range"]');
+
+var rangeValue = function(){
+  var newValue = elem.value;
+  var target = document.querySelector('.value');
+  target.innerHTML = newValue;
+  document.body.style.fontSize=elem.value+"px";
+
+//   var all = document.getElementsByClassName('button');
+// for (var i = 0; i < all.length; i++) {
+//   all[i].style.style.fontSize=elem.value+"px";
+// }
+}
+rangeValue();
+elem.addEventListener("input", rangeValue);
+
+if(localStorage.getItem("username")!=undefined)
+{$('#user_name').val(localStorage.getItem("username"))
+console.log('username loaded '+localStorage.getItem("username"));
+
+}
+
+if($('#user_name').val()=='')
+{
+
+  
+  $.ajax({
+    url: 'https://randomuser.me/api/',
+    dataType: 'json',
+    success: function(data) {
+      $('#user_name').val('username')
+      
+      $('#user_name').val( 
+        JSON.stringify(Object.values(data.results[0].name)).split('","').join(' ').replace('["','').replace('"]','')  );
+    }
+  });
+  localStorage.setItem("username", $('#user_name').val()) ;
+}
+
+$("#user_name").on("keyup", function(e){
+
+  console.log('username set:' + $('#user_name').val())
+  localStorage.setItem("username", $('#user_name').val()) ;
+});
+
+let open_part = localStorage.getItem('open_part');
+if(open_part!=null&&open_part!='')
+{
+  allhide();
+  $('#'+open_part).show();
+}
+
+function check_update_notification(updating) {
+  console.log('check_update_notification called, updating: ' + updating)
+}
+
+$('#menu_cliplist').on('click',function () {
+  localStorage.setItem('open_part','cliplist')
+  // ipc.send('go_index');
+})
+$('#menu_settings').on('click',function () {
+  localStorage.setItem('open_part','settings')
+  // ipc.send('go_index');
+})
+$('#menu_info').on('click',function () {
+  localStorage.setItem('open_part','info')
+  // ipc.send('go_index');
+})
+$('#menu_chat').on('click',function () {
+  localStorage.setItem('open_part','chat')
+  // ipc.send('go_index');
 })

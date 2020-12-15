@@ -1,8 +1,9 @@
 @import "reset";
+// @import "chat";
 @import "_face_checkbox";
 
 $out_transition : 3000ms;
-$nav_transition : 20000ms;
+$nav_transition : 3000ms;
 $unhover_transition : 300ms;
 $appear_transition : 50ms;
 
@@ -22,6 +23,40 @@ $dark_back : #212121;
 $dark_back_tr : #212121c5;
 
 // background-color: lightgreen;
+ 
+input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  width: 40%;
+  height: 5px;
+  border-radius: 5px;
+  // margin: 0 auto;
+  outline: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  // content: ('123');
+  -webkit-appearance: none;
+  background-color: #e74c3c;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}​
+  input[type="range"]::-webkit-slider-thumb:hover {
+    // background-color: white;
+    border: 2px solid #e74c3c;
+  }
+  input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.6);
+  }
+
+#statuses{
+  font-family: inherit;
+}
+
 body {
   
   small{
@@ -38,22 +73,32 @@ body {
 
   
   .button{
-
     margin: 0.5rem;
     padding: 0.3rem;
     border: 0;
     cursor: pointer;
     border-radius: 5px;
     transition: ease-in-out 300ms;
- 
+    font-size: inherit;
   }
 
   .setting_item{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center ;
+     justify-content: space-between;
     padding: 1rem;
+    p{
+      width: auto;
+    }
     .toggle{
+      margin-top: 3rem;
+      .check-label{
+      }
+      right: 1rem;
+    }
+    .setting_value{
+      width: 40%;
       right: 1rem;
     }
   }
@@ -66,10 +111,10 @@ content: " \f08e";
   }
   textarea{
     resize: vertical; 
-    font-size: 1.3rem;
     margin-bottom: 1rem;
     width: 100%;
     height: auto;
+    font-size: inherit;
   }
   .title{
     
@@ -108,6 +153,9 @@ content: " \f08e";
 
 
     >div.mynav {
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      // padding-top: 0.3rem;
       &:hover{
         // color: red;
       }
@@ -129,7 +177,6 @@ content: " \f08e";
 
       >ul.nav_list {
         
-         padding: 0.2rem;
         -webkit-app-region: drag;
         padding: 0.1rem;
         list-style: none;
@@ -190,7 +237,7 @@ content: " \f08e";
         }
 
         >li#menu_chat {
-          display: none;
+          // display: none;
           >i.fal.fa-comment-alt-dots {}
 
           >div {}
@@ -254,7 +301,7 @@ content: " \f08e";
       justify-content: space-between;
       .clip__item{
       // justify-content: center;
-
+        padding-left: 0.5rem;
         display: flex;
         align-items: center;
         height: 100%;
@@ -458,20 +505,33 @@ left: calc(100% - 30px);
     }
   body{
     color: $dark_black;
-  }
+  
+
+
+&:hover .mynav{
+
+  
+    background-color: $dark_back;  
+    & *{
+      color: $dark_black;
+    }
+  
+}
   .mynav{
     color: darken( $dark_back_def, 10%) ;
     .nav__item{
       transition:  ease-in $out_transition; 
-}
-    // background-color: $dark_back_def; 
-    &:hover{
-      background-color: $dark_back;  
-      & *{
-        color: $dark_black;
-      }
-    }
+
+   } 
+   
+   
+    
+  
+
   }
+}
+
+
   .cliplist:not(:hover) {
     .menu-list-item-active {
       transition: ease-in $out_transition; 
@@ -501,7 +561,7 @@ left: calc(100% - 30px);
     background-color: $dark_back;
   }
 
-  
+  #mynav,
   #settings,
   #chat,
   #bonus,
@@ -542,19 +602,30 @@ left: calc(100% - 30px);
       }
     }
     }
-  .mynav{
-    color: darken( $light_back_def, 10%) ;
-    .nav__item{
-      transition: ease-in $out_transition; 
-}
-    background-color: $light_back_def; 
-    &:hover{
+
+
+    body{
+      // color: $light_black;
+  &:hover .mynav{
       background-color: $light_back;  
       & *{
         color: $light_black;
       }
+    
+  }
+    .mynav{
+      color: darken( $light_back_def, 10%) ;
+      .nav__item{
+        transition:  ease-in $out_transition; 
+  
+     } 
+     
     }
   }
+
+
+
+
   .cliplist:hover {
     background-color: $light_back;
   }
@@ -574,6 +645,9 @@ left: calc(100% - 30px);
   {
     background-color: $light_back;
   }
+
+
+  #mynav,
   #settings,
   #chat,
   #bonus,

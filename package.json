@@ -1,13 +1,14 @@
 {
   "name": "electron_call-help",
-  "version": "1.0.22",
+  "version": "1.0.24",
   "description": "my new callhelp app",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "electron-builder build --win --publish never",
-    "deploy": "electron-builder build --win --publish always"
+    "deploy": "electron-builder build --win --publish always",
+    "server": "nodemon ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,8 @@
   },
   "dependencies": {
     "electron-updater": "^4.3.5",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "mongoose": "^5.11.7",
+    "node-machine-id": "^1.1.12"
   }
 }
