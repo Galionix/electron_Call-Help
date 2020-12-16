@@ -14,6 +14,12 @@ let droplayer = document.getElementById('drag_layer')
 let droptarget = document.getElementById('droptarget')
 $(droplayer).hide();
 
+$(function () {});
+$(".roomlist").resizable({
+  handles: "e, w"
+});
+
+
 $("#user_name").text(username);
 $("#user_role").text(userrole);
 $("#chat__name").text(current_chat);

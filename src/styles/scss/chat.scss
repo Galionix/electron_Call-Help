@@ -6,7 +6,12 @@ $topcolor: #b1f4cf ;
 
 // $back_primary: #ace0f9;
 // $back_secondary:  #fff1eb;
-$back_primary: #587A7B;
+
+
+$back_primary: #535de7;
+
+
+
 $back_secondary:  lighten($back_primary, 10%);
 $font_heavy: 600;
 $font_color_primary: #fff1eb;
@@ -284,11 +289,14 @@ a {
     // -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
     // -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.41);
     // box-shadow: 25px 0px 20px -1px rgba(0, 0, 0, 0.41);
+    background-color: lighten(  $back_primary,3% );
+
+
     .texts_container{
-        background-color: lighten(  $back_primary,3% );
         
         .roomname{
     color: $font_color_primary;
+    color: red;
 
     
 }
@@ -387,13 +395,14 @@ ul>li>a {
 
 .texts_container {
     position: absolute;
-    margin-left: 25px;
+    padding-left: 55px;
+    // width: 100%;
     height: 50px;
     z-index: -1;
-    padding-left: 2rem;
+    // padding-left: 2rem;
     // background-color: #fff;
-    width: calc(22vw - 4.5rem);
-    border-radius: 5px;
+    width: calc(22vw - 6.5rem);
+    // border-radius: 5px;
 }
 
 .roomlist.collapsed a {
@@ -587,9 +596,19 @@ body {
         height: 2rem;
         width: 100%;
         font-size: inherit;
-        background-color: inherit;
+        background-color: $font_color_secondary;
         border: 0;
-        
+        display: flex;
+        align-items: center;
+        border-radius: .5rem;
+        // padding: 0.5rem;
+        &::placeholder {
+            color: lighten($font_color_secondary,15%);
+            // font-size: 1.5em;
+            text-align: center;
+            vertical-align: center;
+            
+          }
     }
 
     a {
