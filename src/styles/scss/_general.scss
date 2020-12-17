@@ -1,0 +1,22 @@
+$back_primary: #535de7;
+$back_secondary: lighten($back_primary, 10%);
+$font_color_primary: #fff1eb;
+
+.btn {
+    margin: 0.2rem;
+    min-width: 1rem;
+    min-height: 1rem;
+    display: flex;
+    padding: .5rem;
+    cursor: pointer;
+    // background-color: lighten(#535de7, 10%);
+    color: darken($back_primary, 40%);
+    transition: 400ms ease-in-out;
+    &:hover {
+        transition: 100ms ease-in-out;
+        color: lighten($back_primary, 50%);
+        background-color: $back_secondary;
+    }
+
+    border-radius: .5rem;
+}

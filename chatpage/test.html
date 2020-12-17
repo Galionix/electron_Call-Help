@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/split-grid@1.0.9/dist/split-grid.js"></script>
+    <style>
+        html, body, .grid {
+  /* height: 100%; */
+  padding: 0;
+}
+body {
+  margin: 40px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+
+  .wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 10px 1fr 1fr;
+    grid-template-areas:
+               "sidebar gutter header  header"
+               "sidebar gutter content content";
+    background-color: #fff;
+    color: #444;
+  }
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+.header {
+  background-color: #999;
+}
+.vertical-gutter {
+  background: rgba(0,0,0,0.2);
+  grid-area: gutter;
+  cursor: ew-resize;
+}
+/* .wrapper:hover{
+    grid-template-areas:
+               "header  header"
+               "content content";
+} */
+    </style>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <div class="box header">Header</div>
+        <div class="box sidebar">Sidebar</div>
+        <div class="box content">Content</div>
+        <div class="vertical-gutter">
+        </div>
+      </div>
+</body>
+<script>
+
+    if(localStorage.getItem('gridTemplateStyle'))
+document.getElementById('wrapper').style.gridTemplateColumns = localStorage.getItem('gridTemplateStyle')
+     function startDragging() {
+        
+      alert(1)}
+
+
+var split = Split({
+	columnGutters: [{
+    track: 1,
+    element: document.querySelector('.vertical-gutter'),
+    columnMinSizes: 200 
+  }],
+  onDrag: function (direction,track,gridTemplateStyle) {
+      console.log(' gridTemplateStyle'+gridTemplateStyle);
+      localStorage.setItem('gridTemplateStyle',gridTemplateStyle)
+  }
+})
+</script>
+</html>

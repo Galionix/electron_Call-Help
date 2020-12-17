@@ -14,10 +14,10 @@ let droplayer = document.getElementById('drag_layer')
 let droptarget = document.getElementById('droptarget')
 $(droplayer).hide();
 
-$(function () {});
-$(".roomlist").resizable({
-  handles: "e, w"
-});
+// $(function () {});
+// $(".roomlist").resizable({
+//   handles: "e, w"
+// });
 
 
 $("#user_name").text(username);
@@ -62,6 +62,8 @@ $("#close_chat_settings").on('click',function (e) {
 
 $("#drag_layer").on('click',function (e) {
   $("#menu").hide()
+  $("#chat_settings").hide()
+
   $(droplayer).hide();
   $("#drag_hint").show()
 })
@@ -251,7 +253,7 @@ function addMessage(msg) {
 
 
 // console.log(message);
-document.querySelector('#chat__body').appendChild(message)
+document.querySelector('#messages').appendChild(message)
 // $('#chat__body').appendTo(message);
 }
 

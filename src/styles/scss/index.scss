@@ -134,8 +134,9 @@ content: " \f08e";
       color: darken($color: lightgreen, $amount: 30);
     }
   }
+  font-family: 'Commissioner', sans-serif;
  
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
 
 
@@ -666,23 +667,17 @@ left: calc(100% - 30px);
     
   background-color: transparent;
 }
-
-
-
 .transparentable:not(:hover) .clip__item:not(.menu-list-item-active){
   transition: ease-in $out_transition ;
   background-color: transparent;
   filter: blur(0.3rem);
   color: rgba(128, 128, 128, 0.568);
 }
-
 .mynav:hover *
 {
   filter: blur(0);
   //  background-color: red;
 }
-
-
 @media (max-width: 350px) {
   .main {
     // background-color: tomato;
