@@ -1,0 +1,29 @@
+.btn {
+    margin: 0.2rem;
+    width: fit-content;
+    min-height: 1rem;
+    display: flex;
+    padding: .5rem;
+    cursor: pointer;
+    color: darken($back_prim, 30%);
+    transition: 400ms ease-in-out;
+    background-color:lighten($back_sec, 15%);
+
+    &:hover {
+        transition: 100ms ease-in-out;
+        color: darken($back_prim, 40%);
+        background-color: lighten($back_sec, 20%);
+        box-shadow: 0px 0px 38px -8px rgba(0,0,0,0.62);
+    }
+
+    border-radius: .5rem;
+}
+
+h1{
+    color: $font_prim;
+    font-size: 3rem;
+
+}
+.page{
+    height: 100vh;
+}

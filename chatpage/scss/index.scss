@@ -1,0 +1,12 @@
+@import "reset";
+@import "values";
+@import "general";
+@import "login";
+
+body{
+    height: 100vh;
+}
+
+.hide{
+    display: none;
+}

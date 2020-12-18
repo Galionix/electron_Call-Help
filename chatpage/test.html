@@ -1,93 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/split-grid@1.0.9/dist/split-grid.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <style>
-        html, body, .grid {
-  /* height: 100%; */
-  padding: 0;
+      html,
+      body,
+      .grid {
+        /* height: 100%; */
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+      }
+
+      .content {
+        grid-area: content;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+
+      .wrapper {
+        display: grid;
+        /* grid-gap: 10px; */
+        grid-template-columns: 1fr 10px 1fr 1fr;
+        grid-template-areas:
+          "sidebar gutter header  header"
+          "sidebar gutter content content";
+        background-color: #fff;
+        color: #444;
+      }
+
+      .box {
+        background-color: #444;
+        color: #fff;
+        border-radius: 5px;
+        /* padding: 20px; */
+        font-size: 150%;
+      }
+
+      .header {
+        background-color: #999;
+      }
+
+      .vertical-gutter {
+        background-color: rgb(98, 67, 67);
+        grid-area: gutter;
+        cursor: ew-resize;
+        /* width: 5px; */
+      }
+
+      /* .wrapper:hover{
+  grid-template-areas:
+               "header  header  header"
+               "content content content";
+               
 }
-body {
-  margin: 40px;
-}
 
-.sidebar {
-    grid-area: sidebar;
-  }
-
-  .content {
-    grid-area: content;
-  }
-
-  .header {
-    grid-area: header;
-  }
-
-
-  .wrapper {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 10px 1fr 1fr;
-    grid-template-areas:
-               "sidebar gutter header  header"
-               "sidebar gutter content content";
-    background-color: #fff;
-    color: #444;
-  }
-.box {
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
-}
-
-.header {
-  background-color: #999;
-}
-.vertical-gutter {
-  background: rgba(0,0,0,0.2);
-  grid-area: gutter;
-  cursor: ew-resize;
-}
-/* .wrapper:hover{
-    grid-template-areas:
-               "header  header"
-               "content content";
-} */
+.wrapper:hover .sidebar{
+                 display: none;
+               } */
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <div class="wrapper" id="wrapper">
-        <div class="box header">Header</div>
-        <div class="box sidebar">Sidebar</div>
-        <div class="box content">Content</div>
-        <div class="vertical-gutter">
-        </div>
+      <div class="box header">Header</div>
+      <div class="box sidebar" id="sidebar">s</div>
+      <div class="box content">Content</div>
+      <div class="vertical-gutter">
       </div>
-</body>
-<script>
+    </div>
+  </body>
+  <script>
+if(split) split.destroy()
+    if (localStorage.getItem('gridTemplateStyle'))
+      document.getElementById('wrapper').style.gridTemplateColumns = localStorage.getItem('gridTemplateStyle')
+ 
 
-    if(localStorage.getItem('gridTemplateStyle'))
-document.getElementById('wrapper').style.gridTemplateColumns = localStorage.getItem('gridTemplateStyle')
-     function startDragging() {
-        
-      alert(1)}
+    var options = {
+      cursor: "ew-resize",
+      snapOffset: 60,
+      // minSize: [2],
+      // expandToMin: false,
+      minSize: 50,
+      // columnMinSizes: { 
+      //   [0]: 50,
+      //   [1]: 50,
+      //  },
+      columnGutters: [{
+        track: 1,
+        element: document.querySelector('.vertical-gutter'),
 
+      }],
+      onDrag: function (direction, track, gridTemplateStyle) {
+        console.log(' gridTemplateStyle');
+        // console.log(' gridTemplateStyle' + gridTemplateStyle);
+        localStorage.setItem('gridTemplateStyle', gridTemplateStyle)
+      }
+    };
 
-var split = Split({
-	columnGutters: [{
-    track: 1,
-    element: document.querySelector('.vertical-gutter'),
-    columnMinSizes: 200 
-  }],
-  onDrag: function (direction,track,gridTemplateStyle) {
-      console.log(' gridTemplateStyle'+gridTemplateStyle);
-      localStorage.setItem('gridTemplateStyle',gridTemplateStyle)
-  }
-})
-</script>
+    var split = Split(options)
+    $("#sidebar").on('click',function () {
+      $('.wrapper').css('grid-template-areas','"header  header  header" "content content content"');
+        $(".sidebar").css('display','none')       
+        $(".vertical-gutter").css('display','none')       
+    })
+    $(".header").on('click',function () {
+      $('.wrapper').css('grid-template-areas','"sidebar gutter header  header" "sidebar gutter content content"');
+        $(".sidebar").css('display','initial')       
+        $(".vertical-gutter").css('display','initial')       
+    })
+  </script>
+
 </html>
