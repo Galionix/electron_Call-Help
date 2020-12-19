@@ -1,12 +1,22 @@
 @import "reset";
 @import "values";
 @import "general";
+
+
 @import "login";
+@import "chat_menu_wrapper";
+@import "message_wrapper";
+@import "userlist_wrapper";
 
 body{
     height: 100vh;
+    font-family: 'Commissioner', sans-serif;
 }
 
 .hide{
     display: none;
+}
+
+#logged{
+    display: flex;
 }

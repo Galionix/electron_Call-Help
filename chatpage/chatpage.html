@@ -1,32 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" 
-    content="404404419133-lvb79b2ag508rgjjgijbs9m43rfvqa5o.apps.googleusercontent.com">
 
-<link rel="stylesheet" href="./css/index.css">
-</head>
-<body>
-    <div class="main_wrapper">
-        <div id="login_form" class="page">
-            <h1 >Please, login with your account</h1>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            <a href="#" onclick="signOut();" class="signOut btn">Sign out</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id"
+            content="404404419133-lvb79b2ag508rgjjgijbs9m43rfvqa5o.apps.googleusercontent.com">
+
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/all.min.css">
+        <!-- <link rel="stylesheet" href="./css/vendor/fontawesome.min.css"> -->
+    </head>
+
+    <body>
+        <div class="main_wrapper">
+            <div id="login_form" class="page">
+                <h1>Please, login with your account</h1>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+            </div>
+            <div id="logged" class="page">
+                <div id="chat_menu_wrapper" class="block">
+
+
+                    <div id="cmw_search" class="item">
+                        <i class="fas fa-bars btn"></i>
+                        <input type="text" id="cmw_search_input" class="btn input" placeholder="Введите текст...">
+                        <i id="cmw_search_i" class="fal fa-search btn"></i>
+                    </div>
+                    <div id="cmw_profile">
+                        <div id="userdata">
+
+                            <img id="user_avatar" class="avatar" src="" alt="">
+                            <div id="username">Jhon Doe</div>
+                        </div>
+                        <a href="" onclick="signOut();" class="signOut btn"> <i class="far fa-sign-out-alt"></i> </a>
+
+                    </div>
+                    <div id="cmw_actions" class="item">
+                        <!-- <a href="" onclick="signOut();" class="signOut btn"> <i class="far fa-sign-out-alt"></i> </a> -->
+
+                    </div>
+                    <div id="cmw_chats" class="item">
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem ipsum dolor sit ame</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                        <div class="chat_item">
+
+                            <img src="./img/100.png" alt="" class="avatar">
+
+                            <div class="texts_container">
+                                <div class="chat__name">Chat name</div>
+                                <div class="chat_last_message">Lorem, ipsum dolor sit a</div>
+                            </div>
+
+                            <div class="chat_badges">
+                                <div class="last_message_time_badge">22:30</div>
+                                <div class="unread_badge">10</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="cmw_info" class="item">
+                        <p>Например, вы онлайн!</p>
+                    </div>
+
+                </div>
+                <div id="message_wrapper" class="block"></div>
+                <div id="userlist_wrapper" class="block"></div>
+            </div>
         </div>
-        <div id="logged" class="page">
+    </body>
 
-            <a href="#" onclick="signOut();" class="signOut btn">Sign out</a>
-        </div>
-    </div>
-</body>
-
-<script src="./scripts/vendor/jquery-3.5.1.min.js"></script>
-<script src="./scripts/init.parts.js"></script>
-<script src="./scripts/element.parts.js"></script>
-<script src="./scripts/action.parts.js"></script>
+    <script src="./scripts/vendor/jquery-3.5.1.min.js"></script>
+    <script src="./scripts/init.parts.js"></script>
+    <script src="./scripts/element.parts.js"></script>
+    <script src="./scripts/action.parts.js"></script>
 
 </html>
