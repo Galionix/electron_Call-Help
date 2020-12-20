@@ -148,9 +148,7 @@ content: " \f08e";
     height: 100vh;
     display: grid;
     grid-template-rows: auto minmax(max-content,100% );
-    grid-template-areas: 
-    "nav"
-    "content";
+ 
 
 
     >div.mynav {
@@ -170,7 +168,7 @@ content: " \f08e";
       //  margin-left: 0.1rem;
       //  margin-right: 0.1rem;
       // margin-right: 1rem;
-      grid-area: nav;
+  
       flex-direction: row;
       // -webkit-app-region: drag;
      
@@ -279,7 +277,7 @@ content: " \f08e";
 
     #cliplist{
       cursor: default;
-      grid-area: content;
+       
       ::selection {
         background: transparent;
       }
@@ -292,7 +290,7 @@ content: " \f08e";
     #info {
       /* width: 100%; */
       display: none;
-      grid-area: content;
+     
     }
 
     >div#cliplist {
@@ -681,9 +679,7 @@ left: calc(100% - 30px);
 @media (max-width: 350px) {
   .main {
     // background-color: tomato;
-    grid-template-areas: 
-    "content"
-    "nav";
+ 
   }
 }
  

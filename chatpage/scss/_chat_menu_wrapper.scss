@@ -1,8 +1,8 @@
 #chat_menu_wrapper {
     background-color: $back_prim;
     flex: 1 1 25%;
-    color: $font_prim;
-    
+    color: complement($font_prim);
+
 
     #cmw_search {
         position: relative;
@@ -11,24 +11,26 @@
             position: absolute;
             right: .2rem;
         }
-
     }
 
     #cmw_profile {
+        margin: 0.5rem;
         padding: 0.5rem;
         display: flex;
         align-items: center;
         flex-direction: row;
-        padding: 0.5rem;
+        // padding: 0.5rem;
         border-radius: .5rem;
-        width: 90%;
+        // width: 90%;
         background-color: $back_sec;
-        align-self: center;
+        justify-content: space-evenly;
+        // align-self: center;
         #userdata {
-            
+
             display: flex;
             flex-direction: row;
             align-items: center;
+
             img#user_avatar {
                 width: 3rem;
                 height: 3rem;
@@ -38,7 +40,7 @@
                 margin-left: 1rem;
                 text-align: center;
                 // margin: 0 auto;
-                
+
                 font-weight: 600;
             }
 
@@ -54,65 +56,69 @@
         &::-webkit-scrollbar {
             width: 8px;
             border-radius: 5px;
-
-          }
-          &::-webkit-scrollbar-track:hover {
-            background-color:lighten($back_sec, 10%);
-
-          }
-          &::-webkit-scrollbar-track
-           {
-            border-radius: 5px;
-
-          }
-         &::-webkit-scrollbar-thumb {
-            background: transparent; 
-            border-radius: 5px;
-
-          }
-          &::-webkit-scrollbar-thumb:hover {
-            width: 10px;
-            // background: #555; 
-    background-color:lighten($back_sec, 20%);
-
             
 
-          }
+        }
+        &::-webkit-scrollbar-track {
+            border-radius: 5px;
+
+        }
+        &:hover {
+            &::-webkit-scrollbar-thumb {
+                background-color: darken($back_sec, 20%);
+                border-radius: 5px;
+
+            }
+            &::-webkit-scrollbar-track {
+                background-color: rgba(lighten($back_sec, 10%), .4);
+    
+            }
+        }
+
+
+ 
+
         display: flex;
         flex-flow: column nowrap;
         overflow-y: auto;
         height: calc(100vh - 14rem);
-        
+
         .chat_item {
             background-color: $back_prim;
-            &:hover{
+            color: rgba( $font_prim, .7);
+            &:hover {
                 cursor: pointer;
-            background-color: lighten($back_sec , 10%);
+                background-color: rgba( lighten($back_sec, 10%), .2);
+                color:  $font_prim;
 
             }
+
             .avatar {
-                padding-right: .5rem;
-                padding-left: .5rem;
+                padding: .5rem;
 
                 width: 3rem;
                 height: 3rem;
             }
+
             display: flex;
             flex-direction: row;
             align-items: center;
             width: 100%;
+
             .texts_container {
                 flex-direction: column;
-                
+
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
+
                 .chat_last_message {
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     overflow: hidden;
                 }
             }
+
             .chat_badges {
                 flex-direction: column;
                 margin-left: auto;
@@ -122,7 +128,8 @@
             }
         }
     }
-    #cmw_info{
+
+    #cmw_info {
         // position: fixed;
         // bottom: 0;
         // left: 0;

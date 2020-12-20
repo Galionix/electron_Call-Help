@@ -2,8 +2,11 @@
 
 
 // $back_prim: #535de7;
-$back_prim: #4e5077;
+$back_prim: #445c36;
+
+$font_prim: white;
+// $font_prim: invert($back_prim,90%);
+
 $accent_prim: #ffe571;
 $back_sec: lighten($back_prim, 10%);
-$font_prim: white;
 

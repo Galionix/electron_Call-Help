@@ -48,14 +48,6 @@ table {
   border-spacing: 0;
 }
 
-:-webkit-any-link {
-  color: initial;
-}
-
-:-moz-any-link {
-  color: initial;
-}
-
 :any-link {
   color: initial;
 }
@@ -68,19 +60,15 @@ a {
   margin: 0.2rem;
   min-width: 1rem;
   min-height: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: .5rem;
   cursor: pointer;
   color: #0d1361;
-  -webkit-transition: 400ms ease-in-out;
   transition: 400ms ease-in-out;
   border-radius: .5rem;
 }
 
 .btn:hover {
-  -webkit-transition: 100ms ease-in-out;
   transition: 100ms ease-in-out;
   color: white;
   background-color: #8087ed;
@@ -120,19 +108,13 @@ a {
 }
 
 .chat__message {
-  -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
   box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
   position: relative;
   background-color: #ffffff;
   border-radius: 10px;
   /* width: fit-content; */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-bottom: 3px;
   font-size: medium;
   max-width: 400px;
@@ -140,16 +122,10 @@ a {
 }
 
 .badge {
-  -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
   box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-bottom: 13px;
   margin-top: 10px;
   color: #ffffff;
@@ -158,10 +134,8 @@ a {
   /* margin-left: 15%; */
   border-radius: 10px;
   font-size: medium;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
+  align-content: center;
+  align-self: center;
   margin: 3px  auto;
 }
 
@@ -204,7 +178,6 @@ a {
   position: absolute;
   /* */
   top: 100%;
-  -webkit-transform: translateY(-170%);
   transform: translateY(-170%);
   /* margin-bottom: -30px;  */
 }
@@ -214,16 +187,12 @@ a {
 }
 
 .chat__message__img img {
-  -webkit-transition: -webkit-transform 0.7s ease-in-out;
-  transition: -webkit-transform 0.7s ease-in-out;
   transition: transform 0.7s ease-in-out;
-  transition: transform 0.7s ease-in-out, -webkit-transform 0.7s ease-in-out;
 }
 
 .chat__message__img:hover img {
   /* transition-duration: 0.7s; */
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  transform: scale(1.5);
   /* transition-duration: 0.7s; */
 }
 
@@ -251,8 +220,6 @@ body .mynav {
 
 body .mynav .nav_list {
   -webkit-app-region: drag;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: #fff;
   padding: 0.3rem;
@@ -276,21 +243,15 @@ body .mynav .nav_list li#menu_close:hover i {
 }
 
 body .mynav .nav_list i {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   -webkit-app-region: none;
   font-size: 23px;
 }
 
 body .mynav .nav_list .nav__item {
   -webkit-app-region: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   cursor: pointer;
   width: 2.5rem;
   padding: 0.1rem;
@@ -301,9 +262,7 @@ body .mynav .nav_list .nav__item > div {
 }
 
 body .mynav .nav_list .nav__item i {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   -webkit-app-region: none;
   font-size: 23px;
 }
@@ -314,13 +273,10 @@ body .mynav .nav_list .nav__item:hover i {
 }
 
 body .mynav .nav_list .nav__item:not(:hover) i {
-  -webkit-transition: ease 300ms;
   transition: ease 300ms;
 }
 
 body #chat_settings {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 70vh;
   top: 15vh;
@@ -334,19 +290,10 @@ body #chat_settings {
 
 body #chat_settings .toprow {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 body #chat_settings .toprow #chat__name2 {
@@ -374,16 +321,9 @@ body #drag_layer {
   bottom: 0;
   left: 0;
   z-index: 120;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: ease-in-out 300ms;
+  justify-content: center;
+  align-items: center;
   transition: ease-in-out 300ms;
 }
 
@@ -392,21 +332,13 @@ body #drag_layer #drag_hint {
   height: 30vh;
   font-size: 5vw;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border: 3px dashed white;
 }
 
 body .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: #8087ed;
 }
@@ -425,8 +357,7 @@ body .container .super_container #menu {
   width: 200px;
   height: calc(100vh - 2.2rem);
   border-radius: 0;
-  -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
-          box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
 }
 
 body .container .super_container #menu #usersection {
@@ -444,14 +375,9 @@ body .container .super_container #menu .setting_item:hover {
 
 body .container .super_container #options {
   height: 1.3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
   position: fixed;
   top: 2.25rem;
   z-index: 100;
@@ -464,12 +390,8 @@ body .container .super_container #options {
 }
 
 body .container .super_container #options a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   color: #fff1eb;
@@ -495,8 +417,7 @@ body .container .super_container .roomlist {
   height: 100vh;
   background-color: #535de7;
   top: 5rem;
-  -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
-          box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
   width: calc(22vw);
 }
 
@@ -533,12 +454,8 @@ body .container .super_container .roomlistitem a {
   color: #fff1eb;
   display: block;
   height: 52px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   position: relative;
 }
 
@@ -571,10 +488,8 @@ body .container .super_container .roomlistitem .texts_container .roomname {
   overflow: hidden;
   white-space: nowrap;
   line-height: 20px;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 body .container .super_container .roomlistitem .texts_container .message_prev {
@@ -583,10 +498,8 @@ body .container .super_container .roomlistitem .texts_container .message_prev {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 body .container .super_container .roomlistitem .badges_container {
@@ -620,17 +533,11 @@ body .container .chat__body #messages {
 
 body .container .sending__section {
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   background-color: #535de7;
   border-radius: 0px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   bottom: 0rem;
   height: 3rem;
 }
@@ -648,31 +555,9 @@ body .container .sending__section #message_text {
   font-size: inherit;
   background-color: #8087ed;
   border: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   border-radius: .5rem;
-}
-
-body .container .sending__section #message_text::-webkit-input-placeholder {
-  color: #c3c6f7;
-  text-align: center;
-  vertical-align: center;
-}
-
-body .container .sending__section #message_text:-ms-input-placeholder {
-  color: #c3c6f7;
-  text-align: center;
-  vertical-align: center;
-}
-
-body .container .sending__section #message_text::-ms-input-placeholder {
-  color: #c3c6f7;
-  text-align: center;
-  vertical-align: center;
 }
 
 body .container .sending__section #message_text::placeholder {
@@ -695,21 +580,13 @@ body .container #chat_info {
   position: fixed;
   width: 100%;
   background-color: #535de7;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 body .container #chat_info #chat_options {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   padding-right: 1rem;
 }
 
@@ -718,13 +595,8 @@ body .container #chat_info #chat_options a i {
 }
 
 body .container #chat_info .left_info {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding-left: 1rem;
   margin-right: auto;
 }
@@ -749,15 +621,9 @@ body #scroll_to_bottom {
 body #scroll_to_bottom a {
   background-color: white;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 3rem;
   height: 3rem;
   color: #8d5bdf;
@@ -765,7 +631,6 @@ body #scroll_to_bottom a {
 
 body #scroll_to_bottom a:hover {
   color: cornflowerblue;
-  -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
   box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
 }
 
@@ -786,20 +651,15 @@ body #scroll_to_bottom a:hover {
     display: none;
   }
   .roomlistitem {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .roomlistitem img {
     width: 45px;
     margin-left: 3px;
   }
   .roomlistitem:hover img {
-    -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
-            box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.41);
   }
   .roomlistitem a {
     background-color: transparent;
@@ -807,18 +667,6 @@ body #scroll_to_bottom a:hover {
   .roomlistitem a .message_prev,
   .roomlistitem a .roomname {
     display: none;
-  }
-}
-
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
@@ -837,7 +685,6 @@ body #scroll_to_bottom a:hover {
 .grad {
   color: #eeeeee;
   /*border: 1px solid;*/
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   transition: font-size 0.3s ease, background-color 0.3s ease;
   color: #000;
   font-size: 20px;

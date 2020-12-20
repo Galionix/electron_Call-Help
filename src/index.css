@@ -14,7 +14,7 @@ body {
 #info {
   /* width: 100%; */
   display: none;
-  grid-area: content;
+  
 }
 /* ?? */
 .cliplist {
@@ -23,7 +23,7 @@ body {
 
 .mynav {
   /* display: none; */
-  grid-area: nav;
+ 
   /* grid-column: 1;
   grid-row: 1; */
   flex-direction: row;
