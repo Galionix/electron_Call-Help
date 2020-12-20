@@ -62,21 +62,21 @@ a {
   display: flex;
   padding: .5rem;
   cursor: pointer;
-  color: black;
+  color: #652c2c;
   transition: 400ms ease-in-out;
-  background-color: #81a86a;
+  background-color: #e5c4c4;
   border-radius: .5rem;
 }
 
 .btn:hover {
   transition: 100ms ease-in-out;
-  color: black;
-  background-color: #8eb17a;
+  color: #421c1c;
+  background-color: #edd6d6;
   box-shadow: 0px 0px 38px -8px rgba(0, 0, 0, 0.62);
 }
 
 h1 {
-  color: white;
+  color: #F2D9D0;
   font-size: 3rem;
 }
 
@@ -117,7 +117,7 @@ img.avatar {
 }
 
 #login_form {
-  background-color: #445c36;
+  background-color: #BF6B6B;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -130,9 +130,9 @@ img.avatar {
 }
 
 #chat_menu_wrapper {
-  background-color: #445c36;
+  background-color: #BF6B6B;
   flex: 1 1 25%;
-  color: white;
+  color: #d0e9f2;
 }
 
 #chat_menu_wrapper #cmw_search {
@@ -141,7 +141,7 @@ img.avatar {
 
 #chat_menu_wrapper #cmw_search #cmw_search_i {
   position: absolute;
-  right: .2rem;
+  right: 0;
 }
 
 #chat_menu_wrapper #cmw_profile {
@@ -151,7 +151,7 @@ img.avatar {
   align-items: center;
   flex-direction: row;
   border-radius: .5rem;
-  background-color: #5c7c49;
+  background-color: #ce8f8f;
   justify-content: space-evenly;
 }
 
@@ -194,17 +194,17 @@ img.avatar {
 }
 
 #chat_menu_wrapper #cmw_chats:hover::-webkit-scrollbar-thumb {
-  background-color: #2c3c23;
+  background-color: #ac4b4b;
   border-radius: 5px;
 }
 
 #chat_menu_wrapper #cmw_chats:hover::-webkit-scrollbar-track {
-  background-color: rgba(116, 156, 92, 0.4);
+  background-color: rgba(222, 178, 178, 0.4);
 }
 
 #chat_menu_wrapper #cmw_chats .chat_item {
-  background-color: #445c36;
-  color: rgba(255, 255, 255, 0.7);
+  background-color: #BF6B6B;
+  color: rgba(242, 217, 208, 0.7);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -213,8 +213,8 @@ img.avatar {
 
 #chat_menu_wrapper #cmw_chats .chat_item:hover {
   cursor: pointer;
-  background-color: rgba(116, 156, 92, 0.2);
-  color: white;
+  background-color: rgba(222, 178, 178, 0.2);
+  color: #F2D9D0;
 }
 
 #chat_menu_wrapper #cmw_chats .chat_item .avatar {
@@ -244,7 +244,7 @@ img.avatar {
 }
 
 #message_wrapper {
-  background-color: #5c7c49;
+  background-color: #ce8f8f;
   flex: 3 1 50%;
   background: no-repeat center url("/src/include/28ef0d0fa8-3_1390x600.jpg");
   background-size: auto 100%;
@@ -252,7 +252,7 @@ img.avatar {
 
 #userlist_wrapper {
   flex: 1 1 25%;
-  background-color: #445c36;
+  background-color: #BF6B6B;
 }
 
 body {
